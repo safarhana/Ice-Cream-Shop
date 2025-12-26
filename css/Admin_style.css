@@ -1141,7 +1141,9 @@ header .right {
     border-radius: .5rem;
     padding: 1rem;
 }
-
+.seller-profile .details .seller {
+    margin-bottom: 2rem;
+}
 .seller-profile .details .seller img {
     width: 10rem;
     height: 10rem;
@@ -1157,6 +1159,44 @@ header .right {
     text-transform: capitalize;
     
 }
+
+.seller-profile .details .seller span {
+    font-size: 1.2rem;
+    color: gray;
+    display: block;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+} 
+
+.seller-profile .details .flex {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4rem 0;
+}
+
+.seller-profile .details .flex .box {
+    flex: 1 1 25rem;
+    border-radius: .5rem;
+    background-color: #cccccc33;
+    padding: 2rem;
+}
+.seller-profile .details .flex .box span{
+    color: var(--main-color);
+    display: block;
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+.seller-profile .details .flex .box p {
+    font-size: 2rem;
+    color: #000;
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+}
+
 /* media screen */
 
 @media screen and (max-width:991px) {

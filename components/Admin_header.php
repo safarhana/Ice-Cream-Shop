@@ -98,7 +98,7 @@
 
                 <li><a href="../components/Admin_logout.php" onclick="return confirm('logout from this website');"><i
 
-                class="bx bxs-log-out"></i>Dashboard</a></li> </ul>
+                class="bx bxs-log-out"></i>logout</a></li> </ul>
 
         </div>
 

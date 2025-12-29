@@ -465,12 +465,12 @@ section,
 
 
 
+
 .form-container img {
-
     height: 30rem;
-
+    width: auto;       /* Allow width to adjust automatically */
+    object-fit: contain; /* Ensure image fits without stretching */
 }
-
 
 
 .post-editor input[type='submit'] {

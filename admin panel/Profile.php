@@ -38,7 +38,7 @@ if (isset($_COOKIE['seller_id'])) {
 
         <section class="seller-profile">
             <div class="heading">
-              <h1>Profile Detailst</h1>
+              <h1>Profile Details</h1>
                 <img src="../image/separator-img.png">
             </div>
 

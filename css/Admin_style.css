@@ -192,6 +192,7 @@ input[type='submit']:hover {
 
     margin-top: .5rem;
     width: 150px !important;
+    height: auto !important;
 
 }
 
@@ -1264,3 +1265,5 @@ header .right {
         margin-left: 0;
     }
 }
+
+

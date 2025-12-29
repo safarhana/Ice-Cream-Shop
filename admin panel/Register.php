@@ -38,10 +38,11 @@ if (isset($_POST['submit'])) {
     if ($pass !== $cpass) {
       $warning_msg[] = 'Confirm password does not match!';
     } else {
+      $hashed_pass = sha1($pass);
 
       // insert new seller
       $insert_seller = $conn->prepare("INSERT INTO `sellers` (id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
-      $insert_seller->execute([$id, $name, $email, $pass, $rename]);
+      $insert_seller->execute([$id, $name, $email, $hashed_pass, $rename]);
 
       if ($insert_seller) {
         move_uploaded_file($image_tmp_name, $image_folder);

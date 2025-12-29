@@ -9,9 +9,11 @@ if(isset($_POST['submit'])) {
   $pass = $_POST['pass'];
   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
+  $hashed_pass = sha1($pass);
+
   // check credentials
   $select_seller = $conn->prepare("SELECT * FROM `sellers` WHERE email = ? AND password = ?");
-  $select_seller->execute([$email, $pass]);
+  $select_seller->execute([$email, $hashed_pass]);
 
   $row = $select_seller->fetch(PDO::FETCH_ASSOC);
 

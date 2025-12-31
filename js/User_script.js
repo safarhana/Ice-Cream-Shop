@@ -11,7 +11,7 @@ document.querySelector('#search-btn').onclick=()=>{
     profile.classList.remove('active');
 };
 
-let navbar=document.querySelector('navbar');
+let navbar=document.querySelector('.navbar');
 document.querySelector('#menu-btn').onclick=()=>{
     navbar.classList.toggle('active');
 };

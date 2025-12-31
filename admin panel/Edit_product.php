@@ -1,7 +1,6 @@
 <?php
 include '../components/Connect.php';
 
-// 1. Authentication Check
 if (isset($_COOKIE['seller_id'])) {
     $seller_id = $_COOKIE['seller_id'];
 } else {
@@ -10,7 +9,7 @@ if (isset($_COOKIE['seller_id'])) {
     exit();
 }
 
-// 2. Retrieve Product ID
+// Retrieve product id correctly
 if(isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
 } elseif (isset($_GET['id'])) {
@@ -19,36 +18,34 @@ if(isset($_POST['product_id'])) {
     $product_id = '';
 }
 
-// 3. EDIT PRODUCT LOGIC
+// EDIT PRODUCT
 if (isset($_POST['update'])) {
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_INT);
-    $description = filter_var($_POST['description'], FILTER_SANITIZE_SPECIAL_CHARS);
-    $stock = filter_var($_POST['stock'], FILTER_SANITIZE_NUMBER_INT);
-    $status = filter_var($_POST['status'], FILTER_SANITIZE_SPECIAL_CHARS);
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $price = filter_var($_POST['price'], FILTER_SANITIZE_STRING);
+    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+    $stock = filter_var($_POST['stock'], FILTER_SANITIZE_STRING);
+    $status = filter_var($_POST['status'], FILTER_SANITIZE_STRING);
 
-    // Update text details
-    $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, product_detail = ?, stock = ?, status = ? WHERE id = ? AND seller_id = ?");
-    $update_product->execute([$name, $price, $description, $stock, $status, $product_id, $seller_id]);
+    $update_product = $conn->prepare("UPDATE `products` SET name =?, price =?, product_detail = ?, stock =?, status =? WHERE id = ?");
+    $update_product->execute([$name, $price, $description, $stock, $status, $product_id]);
     $success_msg[] = 'Product updated successfully';
 
-    // Handle image update
+    // handle image update
     $old_image = $_POST['old_image'];
     $image = $_FILES['image']['name'];
-    $image = filter_var($image, FILTER_SANITIZE_SPECIAL_CHARS);
+    $image = filter_var($image, FILTER_SANITIZE_STRING);
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
     $image_folder = '../uploaded_files/'.$image;
   
     if (!empty($image)) {
         if ($image_size > 2000000) {
-            $warning_msg[] = "Image size is too large (Max 2MB)";
+            $warning_msg[] = "Image size is too large";
         } else {
             $update_image = $conn->prepare("UPDATE `products` SET image = ? WHERE id = ?");
             $update_image->execute([$image, $product_id]);
             move_uploaded_file($image_tmp_name, $image_folder);
-            
-            // Delete old file if a new one is uploaded
+        
             if($old_image != $image && !empty($old_image)) {
                 if(file_exists('../uploaded_files/'.$old_image)) {
                     unlink('../uploaded_files/'.$old_image);
@@ -59,40 +56,32 @@ if (isset($_POST['update'])) {
     }
 }
 
-// 4. DELETE IMAGE LOGIC
+// DELETE IMAGE
 if(isset($_POST['delete_image'])) {
-    $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_SPECIAL_CHARS); 
-
-    $select_image = $conn->prepare("SELECT image FROM `products` WHERE id = ? AND seller_id = ?");
-    $select_image->execute([$product_id, $seller_id]);
+    $select_image = $conn->prepare("SELECT image FROM `products` WHERE id = ?");
+    $select_image->execute([$product_id]);
     $fetch_image = $select_image->fetch(PDO::FETCH_ASSOC);
 
     if($fetch_image && !empty($fetch_image['image'])){
-        $path = '../uploaded_files/'.$fetch_image['image'];
-        if(file_exists($path)) { unlink($path); }
-
+        unlink('../uploaded_files/'.$fetch_image['image']);
         $update_image = $conn->prepare("UPDATE `products` SET image = '' WHERE id = ?");
         $update_image->execute([$product_id]);
-        $success_msg[] = "Image removed!";   
+        $success_msg[] = "Image deleted successfully!";   
     }
 }
 
-// 5. DELETE PRODUCT LOGIC
+// DELETE PRODUCT
 if(isset($_POST['delete_product'])) {
-    $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_SPECIAL_CHARS); 
-    
-    $select_product = $conn->prepare("SELECT image FROM `products` WHERE id = ?");
-    $select_product->execute([$product_id]);
-    $fetch_product = $select_product->fetch(PDO::FETCH_ASSOC);
+    $delete_image = $conn->prepare("SELECT image FROM `products` WHERE id = ?");
+    $delete_image->execute([$product_id]);
+    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
 
-    if(!empty($fetch_product['image'])) {
-        $path = '../uploaded_files/'.$fetch_product['image'];
-        if(file_exists($path)) { unlink($path); }
+    if(!empty($fetch_delete_image['image'])) {
+        unlink('../uploaded_files/'.$fetch_delete_image['image']);
     }
  
-    $delete_products = $conn->prepare("DELETE FROM `products` WHERE id = ? AND seller_id = ?");
-    $delete_products->execute([$product_id, $seller_id]);
-
+    $delete_products = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+    $delete_products->execute([$product_id]);
     header('Location: View_products.php');
     exit();
 }
@@ -103,31 +92,31 @@ if(isset($_POST['delete_product'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Product - Ice Cream Delights</title>
+    <title>Ice Cream Delights - Edit Product</title>
     <link rel="stylesheet" type="text/css" href="../css/Admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
   
 <div class="main-container">
     <?php include '../components/Admin_header.php'; ?>
-    
     <section class="post-editor">
         <div class="heading">
             <h1>Edit Product</h1>
-            <img src="../image/separator-img.png" alt="">
+            <img src="../image/separator-img.png">
         </div>
-
         <div class="box-container">
             <?php
-                $select_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? AND seller_id = ?");
-                $select_product->execute([$product_id, $seller_id]);
+            $select_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? AND seller_id = ?");
+            $select_product->execute([$product_id, $seller_id]);
 
-                if ($select_product->rowCount() > 0) {
-                    while ($fetch_product = $select_product->fetch(PDO::FETCH_ASSOC)) {  
+            if ($select_product->rowCount() > 0) {
+                while ($fetch_product = $select_product->fetch(PDO::FETCH_ASSOC)) {  
             ?>
             <div class="form-container">
                 <form action="" method="post" enctype="multipart/form-data" class="register">
+
                     <input type="hidden" name="old_image" value="<?= $fetch_product['image']; ?>">
                     <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
 
@@ -157,30 +146,33 @@ if(isset($_POST['delete_product'])) {
 
                     <div class="input-field">
                         <p>Product Stock <span>*</span></p>
-                        <input type="number" name="stock" value="<?= $fetch_product['stock']; ?>" class="box" min="0" max="9999999999">
+                        <input type="number" name="stock" value="<?= $fetch_product['stock']; ?>" class="box" min="0" max="9999999999" maxlength="10">
                     </div>
 
                     <div class="input-field">
                         <p>Product Image <span>*</span></p>
                         <input type="file" name="image" accept="image/*" class="box">
                         <?php if($fetch_product['image'] != '') { ?>
-                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image" style="width: 100%; margin-top: 1rem;">
-                            <input type="submit" name="delete_image" class="btn" value="delete image" style="background-color: var(--red);">
+                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image">
+                            <div class="flex-btn">
+                                <input type="submit" name="delete_image" class="btn" value="delete image" style="width: 49%;">
+                                <a href="View_products.php" class="btn" style="width: 49%; text-align: center;">go back</a>
+                            </div>
+                            
                         <?php } ?>
                     </div>
 
                     <div class="flex-btn">
-                        <input type="submit" name="update" class="btn" value="Update Product">
-                        <input type="submit" name="delete_product" class="btn" value="delete product" onclick="return confirm('Delete this product?');">
+                        <input type="submit" name="update" class="btn" value="update product" style="width: 49%;">
+                        <input type="submit" name="delete_product" class="btn" value="delete product" style="width: 49%;">
                     </div>
-                    <a href="View_products.php" class="btn" style="width: 100%; text-align: center; margin-top: 1rem;">Go Back</a>
                 </form>
             </div>
             <?php 
-                    } 
-                } else {
-                    echo '<div class="empty"><p>No product found!</p></div>';
-                }
+                } 
+            } else {
+                echo '<div class="empty"><p>no product added yet!</p></div>';
+            }
             ?>
         </div>
     </section>

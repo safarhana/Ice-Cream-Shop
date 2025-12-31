@@ -149,22 +149,21 @@ if(isset($_POST['delete_product'])) {
                         <input type="number" name="stock" value="<?= $fetch_product['stock']; ?>" class="box" min="0" max="9999999999" maxlength="10">
                     </div>
 
-                    <div class="input-field">
+                    <div class="input-field" style="margin-bottom: 10px;">
                         <p>Product Image <span>*</span></p>
                         <input type="file" name="image" accept="image/*" class="box">
                         <?php if($fetch_product['image'] != '') { ?>
-                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image">
-                            <div class="flex-btn">
-                                <input type="submit" name="delete_image" class="btn" value="delete image" style="width: 49%;">
-                                <a href="View_products.php" class="btn" style="width: 49%; text-align: center;">go back</a>
+                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image" style="margin-bottom: 10px;">
+                            <div class="flex-btn" style="display: flex; gap: 10px; justify-content: space-between;">
+                                <input type="submit" name="delete_image" class="btn" value="delete image" style="width: 100%; margin:0;">
+                                <a href="View_products.php" class="btn" style="width: 100%; text-align: center; margin:0; display: flex; align-items: center; justify-content: center;">go back</a>
                             </div>
-                            
                         <?php } ?>
                     </div>
 
-                    <div class="flex-btn">
-                        <input type="submit" name="update" class="btn" value="update product" style="width: 49%;">
-                        <input type="submit" name="delete_product" class="btn" value="delete product" style="width: 49%;">
+                    <div class="flex-btn" style="display: flex; gap: 10px; justify-content: space-between; margin-top: 10px;">
+                        <input type="submit" name="update" class="btn" value="update product" style="width: 100%; margin:0;">
+                        <input type="submit" name="delete_product" class="btn" value="delete product" style="width: 100%; margin:0;">
                     </div>
                 </form>
             </div>

@@ -33,6 +33,8 @@ if(isset($_POST['delete'])) {
         $warning_msg[] = "Product not found or unauthorized action!";
     }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

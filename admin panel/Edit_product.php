@@ -9,7 +9,6 @@ if (isset($_COOKIE['seller_id'])) {
     exit();
 }
 
-// Retrieve product id correctly
 if(isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
 } elseif (isset($_GET['id'])) {
@@ -30,7 +29,6 @@ if (isset($_POST['update'])) {
     $update_product->execute([$name, $price, $description, $stock, $status, $product_id]);
     $success_msg[] = 'Product updated successfully';
 
-    // handle image update
     $old_image = $_POST['old_image'];
     $image = $_FILES['image']['name'];
     $image = filter_var($image, FILTER_SANITIZE_STRING);
@@ -149,22 +147,32 @@ if(isset($_POST['delete_product'])) {
                         <input type="number" name="stock" value="<?= $fetch_product['stock']; ?>" class="box" min="0" max="9999999999" maxlength="10">
                     </div>
 
-                    <div class="input-field" style="margin-bottom: 10px;">
+                    <div class="input-field">
                         <p>Product Image <span>*</span></p>
                         <input type="file" name="image" accept="image/*" class="box">
                         <?php if($fetch_product['image'] != '') { ?>
-                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image" style="margin-bottom: 10px;">
-                            <div class="flex-btn" style="display: flex; gap: 10px; justify-content: space-between;">
-                                <input type="submit" name="delete_image" class="btn" value="delete image" style="width: 100%; margin:0;">
-                                <a href="View_products.php" class="btn" style="width: 100%; text-align: center; margin:0; display: flex; align-items: center; justify-content: center;">go back</a>
-                            </div>
+                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image" style="margin-bottom: 5px !important;">
                         <?php } ?>
                     </div>
 
-                    <div class="flex-btn" style="display: flex; gap: 10px; justify-content: space-between; margin-top: 10px;">
-                        <input type="submit" name="update" class="btn" value="update product" style="width: 100%; margin:0;">
-                        <input type="submit" name="delete_product" class="btn" value="delete product" style="width: 100%; margin:0;">
+                    <div style="display: flex; flex-direction: column; gap: 5px !important; width: 100% !important; margin: 0 !important; padding: 0 !important;">
+                        <?php if($fetch_product['image'] != '') { ?>
+                        <div style="display: flex; gap: 5px !important; width: 100% !important; margin: 0 !important;">
+                            <button type="submit" name="delete_image" class="btn" style="flex: 1 !important; margin: 0 !important; width: 100% !important;">Delete Image</button>
+                            <a href="View_products.php" class="btn" style="flex: 1 !important; margin: 0 !important; width: 100% !important; text-align: center; display: flex; align-items: center; justify-content: center;">Go Back</a>
+                        </div>
+                        <?php } else { ?>
+                        <div style="display: flex; width: 100% !important; margin: 0 !important;">
+                            <a href="View_products.php" class="btn" style="flex: 1 !important; margin: 0 !important; width: 100% !important; text-align: center; display: flex; align-items: center; justify-content: center;">Go Back</a>
+                        </div>
+                        <?php } ?>
+
+                        <div style="display: flex; gap: 5px !important; width: 100% !important; margin: 0 !important;">
+                            <button type="submit" name="update" class="btn" style="flex: 1 !important; margin: 0 !important; width: 100% !important;">Update Product</button>
+                            <button type="submit" name="delete_product" class="btn" style="flex: 1 !important; margin: 0 !important; width: 100% !important;">Delete Product</button>
+                        </div>
                     </div>
+
                 </form>
             </div>
             <?php 

@@ -93,6 +93,10 @@ if(isset($_POST['delete_product'])) {
     <title>Ice Cream Delights - Edit Product</title>
     <link rel="stylesheet" type="text/css" href="../css/Admin_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
+    <!-- BOXICONS CDN LINK -->
+
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
@@ -187,6 +191,9 @@ if(isset($_POST['delete_product'])) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <?php include '../components/Alert.php'; ?>
+
+<!--custom js link -->
+
 <script src="../js/Admin_script.js"></script>
 
 </body>

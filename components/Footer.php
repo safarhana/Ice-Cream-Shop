@@ -10,14 +10,14 @@
         <p>No ads, No trails, No commitment</p>
         <div class="box-container">
             <div class="box">
-                <div class="box counter">
+                <div class="box-counter">
                     <p class="counter">5000</p><i class="bx bx-plus"></i>
                 </div>
                 <h3>Successfully Trained</h3>
                 <p>Learners & counting</p>
             </div>
             <div class="box">
-                <div class="box-container">
+                <div class="box-counter">
                     <p class="counter">10000</p><i class="bx bx-plus"></i>
                 </div>
                 <h3>Certification Seller</h3>
@@ -30,7 +30,7 @@
 <footer>
     <div class="content">
         <div class="box">
-            <img src="image/logo.png">
+            <img src="../image/logo.png">
             <p>We're always looking for creative minds to help us craft the perfect ice cream. join our team today!</p>
         </div>
         <div class="box">

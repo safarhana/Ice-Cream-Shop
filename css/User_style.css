@@ -857,7 +857,7 @@ footer .bottom a{
     }
 
     .header .flex .search-form.active{
-        clip-path: polygon(0 0,100% 0,100% 0,0 100%);
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
     }
 
     .header .flex .navbar{
@@ -874,7 +874,7 @@ footer .bottom a{
     }
 
     .header .flex .navbar.active{
-        clip-path: polygon(0 0,100% 100%,0 100%);   
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);   
     }
 
     .header .flex .navbar a{
@@ -887,7 +887,7 @@ footer .bottom a{
         color:#fff;
     }
 
-    header .flex .navbar a:hover{
+    .header .flex .navbar a:hover{
         color:#000;
     }
 

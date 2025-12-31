@@ -27,7 +27,7 @@
 
             <a href="wishlist.php">
                 <i class="bx bx-heart"></i>
-                <sup><?$total_wishlist_items; ?></sup>
+                <sup><?=$total_wishlist_items; ?></sup>
             </a>
 
             <?php

@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 
   $image_size = $_FILES['image']['size'];
   $image_tmp_name = $_FILES['image']['tmp_name'];
-  $image_folder = '../uploaded_files/' . $rename;
+  $image_folder = 'uploaded_files/' . $rename;
 
   // check if the seller already exists
   $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ?");

@@ -9,27 +9,27 @@ if (isset($_COOKIE['seller_id'])) {
     exit();
 }
 
- //delete message from the db
-
- if(isset($_POST['delete_msg'])) {
-  $delete_id = $_POST['delete_id'];
-  $delete_id = filter_var($_delete_id, FILTER_SANITIZE_STRING);
-  $verify_delete = $conn->prepare("Select * FROM `message` WHERE id = ?");
-  $verify_delete->execute([$delete_id]);
 
 
- if($verify_delete->rowCount() > 0) {
-    $delete_msg = $conn->prepare("DELETE FROM 'message' WHERE id = ?");
-    $delete_msg->execute([$delete_id]);
-    $success_msg[] = 'Message deleted successfully';
- } else {
-    $warning_msg[] = 'message already deleted';
- }
+// delete message from the db
+if(isset($_POST['delete_msg'])) {
+    $delete_id = $_POST['delete_id'];
+    
+    // Fixed: removed the extra underscore from the variable name
+    $delete_id = filter_var($delete_id, FILTER_SANITIZE_STRING);
+    
+    $verify_delete = $conn->prepare("SELECT * FROM `message` WHERE id = ?");
+    $verify_delete->execute([$delete_id]);
 
-
- }
-
-
+    if($verify_delete->rowCount() > 0) {
+        // Fixed: Use backticks or no quotes for the table name
+        $delete_msg = $conn->prepare("DELETE FROM `message` WHERE id = ?");
+        $delete_msg->execute([$delete_id]);
+        $success_msg[] = 'Message deleted successfully';
+    } else {
+        $warning_msg[] = 'Message already deleted or not found';
+    }
+}
 
 ?>
 
@@ -63,7 +63,7 @@ if (isset($_COOKIE['seller_id'])) {
           $select_message->execute();
 
           if ($select_message->rowCount() > 0) {
-            while ($fetch_message = $select_message->$fetch_message(PDO::FETCH_ASSOC)) {
+            while ($fetch_message = $select_message->fetch(PDO::FETCH_ASSOC)) {
               ?>
 
               <div class="box">

@@ -448,7 +448,9 @@ section,
 
 
 .post-editor input[type='submit'] {
+
     width: auto;
+
 }
 
 
@@ -1169,6 +1171,7 @@ header .right {
     margin-bottom: 1rem;
 }
 
+
 /* admin order */
 
 .order-container .box-container .box {
@@ -1200,6 +1203,7 @@ header .right {
 .order-container .box-container .box .span {
     text-transform: none;
 }
+
 
 /* media screen */
 

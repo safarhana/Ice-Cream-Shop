@@ -26,7 +26,7 @@ if (isset($_COOKIE['seller_id'])) {
 <body>
     <div class="main-container">
         <?php include '../components/Admin_header.php';  ?>
-        <section class ="message-container">
+        <section class ="user-container">
 
             <div class="heading">
               <h1>Registered Users</h1>

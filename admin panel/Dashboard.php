@@ -105,7 +105,7 @@ if (isset($_COOKIE['seller_id'])) {
                     ?>
                     <h3><?= $number_of_sellers; ?></h3>
                     <p>sellers account</p>
-                    <a href="View sellers.php" class="btn">see selllers</a>
+                    <a href="View_sellers.php" class="btn">see selllers</a>
                 </div>
 
                   <div class="box">

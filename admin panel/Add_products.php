@@ -93,7 +93,7 @@ if (isset($_POST['publish'])) {
   
 <div class="main-container">
     <?php include '../components/Admin_header.php'; ?>
-    <div class="post-editor">
+    <section class="post-editor">
         <div class="heading">
             <h1>Add Product</h1>
             <img src="../image/separator-img.png">
@@ -132,7 +132,7 @@ if (isset($_POST['publish'])) {
                 </div>
             </form>
         </div>
-    </div>
+</section>
 </div>
 
 <?php include '../components/Alert.php'; ?>

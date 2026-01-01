@@ -448,7 +448,9 @@ section,
 
 
 .post-editor input[type='submit'] {
+
     width: auto;
+
 }
 
 
@@ -1169,6 +1171,7 @@ header .right {
     margin-bottom: 1rem;
 }
 
+
 /* admin order */
 
 .order-container .box-container .box {
@@ -1229,6 +1232,7 @@ header .right {
     margin-top: .5rem;
     margin-bottom: 1rem;
 }
+
 /* media screen */
 
 @media screen and (max-width:991px) {

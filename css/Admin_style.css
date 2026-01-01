@@ -355,15 +355,10 @@ section,
 .form-container .register .img-box img {
 
     width: 180px;
-
     height: 180px;
-
     border-radius: 50%;
-
     text-align: center;
-
     padding: 10px;
-
     background-color: var(--main-color);
 
 }
@@ -371,113 +366,75 @@ section,
 
 
 .form-container form h2 {
-
     text-align: center;
-
     font-size: 2rem;
-
     margin-bottom: 1rem;
-
     color: var(--main-color);
-
     text-transform: capitalize;
-
     font-weight: bolder;
-
 }
 
 
 
 .form-container form p {
-
     padding-top: 1rem;
-
     font-size: 1.2rem;
-
     text-transform: capitalize;
-
 }
 
 
 
 .form-container form p span {
-
     color: red;
-
 }
 
 
 
 .form-container form .link {
-
     padding-bottom: 1rem;
-
     font-size: 1.2rem;
-
     text-transform: capitalize;
-
 }
 
 
 
 .form-container form .link a {
-
     color: var(--main-color);
-
 }
 
 
 
 .form-container form .link a:hover {
-
     color: var(--pink-color);
-
     text-decoration: underline;
-
 }
 
 
 
 .form-container form .box {
-
     background-color: var(--white-alpha-25);
-
     border: 2px solid var(--white-alpha-40);
-
     backdrop-filter: var(--backdrop-filter);
-
     box-shadow: var(--box-shadow);
-
     width: 100%;
-
     border-radius: .5rem;
-
     margin: .5rem;
-
     font-size: 1.5rem;
-
     padding: 1rem;
-
 }
 
 
 
 .form-container form textarea {
-
     height: 20rem;
-
     resize: none;
-
 }
 
 
 
 .form-container form .btn {
-
     width: 100%;
-
     font-size: 1.3rem;
-
 }
 
 
@@ -491,19 +448,14 @@ section,
 
 
 .post-editor input[type='submit'] {
-
     width: auto;
-
 }
 
 
 
 .order-container input[type='submit'] {
-
     width: 50%;
-
     padding: 1rem;
-
 }
 
 
@@ -513,27 +465,16 @@ section,
 header {
 
     position: fixed;
-
     left: 0;
-
     top: 0;
-
     right: 0;
-
     height: 80px;
-
     z-index: 151;
-
     box-shadow: 0px 5px 10px 0px #aaa;
-
     padding: 0 50px;
-
     background-color: #fff1ee;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
 }
@@ -541,9 +482,7 @@ header {
 
 
 header .right {
-
     display: flex;
-
 }
 
 
@@ -553,13 +492,9 @@ header .right {
 .toggle-btn {
 
     font-size: 2rem;
-
     padding: .5rem;
-
     color: var(--pink-color);
-
     cursor: pointer;
-
     transition: .6s;
 
 }
@@ -1233,6 +1168,39 @@ header .right {
 .message-container .box-container .box p {
     margin-bottom: 1rem;
 }
+
+/* admin order */
+
+.order-container .box-container .box {
+    padding: 1rem;
+    position: relative;
+}
+
+.order-container .box-container .box .status {
+    position: absolute;
+    left: -4%;
+    top: 1%;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white-alpha-40);
+    display: inline-block;
+    padding: .5rem;
+}
+
+.order-container .box-container .box .details {
+    margin-top: 3rem;
+    line-height: 2;
+    color: gray;
+    text-transform: capitalize;
+}
+
+.order-container .box-container .box .span {
+    text-transform: none;
+}
+
 /* media screen */
 
 @media screen and (max-width:991px) {

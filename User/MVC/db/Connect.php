@@ -1,12 +1,12 @@
 <?php
-$db_name = 'mysql:host=localhost;dbname=icecream_db';
+$db_name = 'icecream_db';
 $user_name = 'root';
 $user_password = '';
 
-$conn = new PDO($db_name, $user_name, $user_password);
+$conn = new mysqli('localhost', $user_name, $user_password, $db_name);
 
-if (!$conn) {
-    echo "not connected";
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 function unique_id()

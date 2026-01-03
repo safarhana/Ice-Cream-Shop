@@ -35,9 +35,11 @@ if (isset($_POST['submit'])) {
 
     // check if the seller already exists
     $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-    $select_users->execute([$email]);
+    $select_users->bind_param("s", $email);
+    $select_users->execute();
+    $select_users->store_result();
 
-    if ($select_users->rowCount() > 0) {
+    if ($select_users->num_rows > 0) {
         $warning_msg[] = 'Email already exists';
     } else {
 
@@ -48,9 +50,9 @@ if (isset($_POST['submit'])) {
 
             // insert new seller
             $insert_user = $conn->prepare("INSERT INTO `users` (user_id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
-            $insert_user->execute([$id, $name, $email, $hashed_pass, $rename]);
+            $insert_user->bind_param("sssss", $id, $name, $email, $hashed_pass, $rename);
 
-            if ($insert_user) {
+            if ($insert_user->execute()) {
                 move_uploaded_file($image_tmp_name, $image_folder);
                 $success_msg[] = 'Registered successfully!';
             } else {

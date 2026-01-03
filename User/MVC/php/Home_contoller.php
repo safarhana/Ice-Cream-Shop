@@ -19,11 +19,13 @@ if (isset($_POST['submit'])) {
 
     // check credentials
     $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-    $select_user->execute([$email, $hashed_pass]);
+    $select_user->bind_param("ss", $email, $hashed_pass);
+    $select_user->execute();
+    $result = $select_user->get_result();
 
-    $row = $select_user->fetch(PDO::FETCH_ASSOC);
+    $row = $result->fetch_assoc();
 
-    if ($select_user->rowCount() > 0) {
+    if ($result->num_rows > 0) {
         setcookie('user', $row['user_id'], time() + 60 * 60 * 24 * 30, '/');
         header('Location: Home.php');
         exit();

@@ -20,8 +20,10 @@
 
             <?php
             $count_wishlist_item = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id=?");
-            $count_wishlist_item->execute([$user_id]);
-            $total_wishlist_items = $count_wishlist_item->rowCount();
+            $count_wishlist_item->bind_param("s", $user_id);
+            $count_wishlist_item->execute();
+            $count_wishlist_item->store_result();
+            $total_wishlist_items = $count_wishlist_item->num_rows;
 
             ?>
 
@@ -32,8 +34,10 @@
 
             <?php
             $count_cart_item = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
-            $count_cart_item->execute([$user_id]);
-            $total_cart_items = $count_cart_item->rowCount();
+            $count_cart_item->bind_param("s", $user_id);
+            $count_cart_item->execute();
+            $count_cart_item->store_result();
+            $total_cart_items = $count_cart_item->num_rows;
 
             ?>
 
@@ -48,10 +52,12 @@
         <div class="profile-detail">
             <?php
             $select_profile = $conn->prepare("SELECT * FROM `users` WHERE user_id=?");
-            $select_profile->execute([$user_id]);
+            $select_profile->bind_param("s", $user_id);
+            $select_profile->execute();
+            $result_profile = $select_profile->get_result();
 
-            if ($select_profile->rowCount() > 0) {
-                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            if ($result_profile->num_rows > 0) {
+                $fetch_profile = $result_profile->fetch_assoc();
 
                 ?>
 

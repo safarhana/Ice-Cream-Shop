@@ -341,6 +341,66 @@ if(isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+    <div class="usage">
+        <div class="heading">
+            <h1>how it works</h1>
+            <img src="image/separator-img.png" alt="seperator">
+        </div>
+        <div class="row">
+            <div class="box-container">
+                <div class="box">
+                    <img src="image/icon.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>scoop ice cream</h3>
+                        <p>Choose yur flavour, scoop it into a cone and prepare for a treat.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="image/icon0.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>add toppings/h3>
+                        <p>Choose from a variety of toppings to enhance your experience.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="image/icon1.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>enjoy your treat</h3>
+                        <p>Choose yur flavour, scoop it into a cone and prepare for a treat.</p>
+                    </div>
+                </div>
+
+            </div>
+            <img src="image/sub-banner.png" class="divider">
+            <div class="box-container">
+                <div class="box">
+                    <img src="image/icon2.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>scoop ice cream</h3>
+                        <p>A perfect scoop to brighten your day</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="image/icon3.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>mix flavors</h3>
+                        <p>Make your own experiences.</p>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="image/icon4.avif" alt="Scoop Ice cream icon">
+                    <div class="detail">
+                        <h3>savor</h3>
+                        <p>Savor the delightful flavors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
   <?php include 'components/Footer.php'; ?>

@@ -261,7 +261,75 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 
-    
+    <div class="taste2">
+        <div class="t-banner">
+            <div class="overlay"></div>
+            <div class="detail">
+                <h1>savor the sweetness of life</h1>
+                <p>Let out desserts bring a smile to your face and a spark to your day</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type1.webp" alt="Fruit ice Cream">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>fruits ice cream</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+             <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type2.webp" alt="Strawberry and Lingonberry">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>Strawberry and Lingonberry</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type3.webp" alt="Strawberry">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>Strawberry and Coffee cookies ice cream</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type4.webp" alt="Bubble Mochi Ice Cream">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>Bubble Mochi Ice Cream</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type5.webp" alt="Mango Ice Cream">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>Mango Ice Cream</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+
+            <div class="box">
+                <div class="box-overlay"></div>
+                <img src="image/type6.webp" alt="Chocolate Ice Cream">
+                    <div class="box-details fadeIn-bottom">
+                        <h1>Chocolate Ice Cream</h1>
+                        <p>find your taste for desserts</p>
+                        <a href="menu.php" class="btn">explore more</a>
+                    </div>
+            </div>
+        </div>
+    </div>
 
   <?php include 'components/Footer.php'; ?>
   

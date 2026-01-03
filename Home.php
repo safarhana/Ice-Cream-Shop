@@ -103,7 +103,7 @@ if(isset($_POST['submit'])) {
                 <div class="icon">
                     <div class="icon-box">
                         <img src="image/services.png" class="img1">
-                        <img src="image/service (1).png" class="img2">
+                        <img src="image/services (1).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -115,8 +115,8 @@ if(isset($_POST['submit'])) {
             <div class="box">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="image/service (2).png" class="img1">
-                        <img src="image/service (3).png" class="img2">
+                        <img src="image/services (2).png" class="img1">
+                        <img src="image/services (3).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -128,8 +128,8 @@ if(isset($_POST['submit'])) {
             <div class="box">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="image/service (5).png" class="img1">
-                        <img src="image/service (6).png" class="img2">
+                        <img src="image/services (5).png" class="img1">
+                        <img src="image/services (6).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -141,8 +141,8 @@ if(isset($_POST['submit'])) {
             <div class="box">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="image/service (7).png" class="img1">
-                        <img src="image/service (8).png" class="img2">
+                        <img src="image/services (7).png" class="img1">
+                        <img src="image/services (8).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -154,8 +154,8 @@ if(isset($_POST['submit'])) {
             <div class="box">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="image/service .png" class="img1">
-                        <img src="image/service (1).png" class="img2">
+                        <img src="image/services.png" class="img1">
+                        <img src="image/services (1).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -167,8 +167,8 @@ if(isset($_POST['submit'])) {
             <div class="box">
                 <div class="icon">
                     <div class="icon-box">
-                        <img src="image/service (2).png" class="img1">
-                        <img src="image/service (3).png" class="img2">
+                        <img src="image/services (2).png" class="img1">
+                        <img src="image/services (3).png" class="img2">
                     </div>
                 </div>
                 <div class="detail">
@@ -402,7 +402,15 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 
+    <div class="pride">
+        <div class="detail">
+            <h1>experience the best of<br> irresistable flavors</h1>
+            <p>We offer unique flavors of ice cream, crafted with care and love to bring you the perfect cone of ice cream.</p>
+            <a href="menu.php" class="btn">shop now</a>
+        </div>
+    </div>
 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <?php include 'components/Footer.php'; ?>
   
 

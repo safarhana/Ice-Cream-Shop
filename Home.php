@@ -253,11 +253,15 @@ if(isset($_POST['submit'])) {
         <div class="overlay"></div>
         <div class="detail">
             <h1>Ice cream turns every moment<br>into something special</h1>
-            <p>Discover the magic in every scoop, flavors crafted to brighten your day. Relish in the sweetness of cool treats, made to bring smiles and joy, bite after bite.
-                Let out dessets brng smile to your face and a spark to your day
+            <p>Discover the magic in every scoop, <br>flavors crafted to brighten your day. 
+                Relish in the sweetness of cool treats, <br>made to bring smiles and joy, bite after bite.
+                Let out dessets brng smile to your face and a spark to your day!
             </p>
+            <a href="menu.php" class="btn">Shop Now</a>
         </div>
     </div>
+
+    
 
   <?php include 'components/Footer.php'; ?>
   

@@ -331,9 +331,21 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
 
+    <div class="flavor">
+        <div class="box-container">
+            <img src="image/left-banner.JPG" alt="promotional Banner">
+            <div class="detail">
+                <h1>Hot deal! Sale up to <span>20% off</span></h1>
+                <p>Limited time only</p>
+                <a href="menu.php" class="btn">shop now</a>
+            </div>
+        </div>
+    </div>
+
+
   <?php include 'components/Footer.php'; ?>
   
-  <!-- custom js link -->
+
      <script src = "/Ice-Cream-Shop/js/User_script.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

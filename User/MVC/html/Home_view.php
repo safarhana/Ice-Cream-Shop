@@ -20,47 +20,47 @@
 
     <?php include '../php/User_header.php'; ?>
 
-    <section class="home" id="home"></section>
-    <div class="swiper home-slide">
-        <div class="swiper-wrapper wrapper">
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>welcome to the</span>
-                    <h3>Classic Ice <br><span>Cream Parlor</span></h3>
-                    <p>Delight in our selection of premium ice cream, perfecly complemented by fresh berries.</p>
-                    <a href="" class="btn">Order Now</a>
+    <section class="home" id="home">
+        <div class="swiper home-slide">
+            <div class="swiper-wrapper wrapper">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>welcome to the</span>
+                        <h3>Classic Ice <br><span>Cream Parlor</span></h3>
+                        <p>Delight in our selection of premium ice cream, perfecly complemented by fresh berries.</p>
+                        <a href="" class="btn">Order Now</a>
+                    </div>
+                    <div class="image">
+                        <img src="../image/home-img-1.png" alt="">
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="../image/home-img-1.png" alt="">
-                </div>
-            </div>
 
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>welcome to the</span>
-                    <h3>Classic Ice <br><span>Cream Parlor</span></h3>
-                    <p>Savor our artisnal ice cream scoops served on fresh, crispy homemade waffle cones.</p>
-                    <a href="" class="btn">Order Now</a>
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>welcome to the</span>
+                        <h3>Classic Ice <br><span>Cream Parlor</span></h3>
+                        <p>Savor our artisnal ice cream scoops served on fresh, crispy homemade waffle cones.</p>
+                        <a href="" class="btn">Order Now</a>
+                    </div>
+                    <div class="image">
+                        <img src="../image/home-img-2.png" alt="">
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="../image/home-img-2.png" alt="">
-                </div>
-            </div>
 
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>welcome to the</span>
-                    <h3>Classic Ice <br><span>Cream Parlor</span></h3>
-                    <p>Experience our gourmet ice cream paired with choco, caramel and fress berries.</p>
-                    <a href="" class="btn">Order Now</a>
-                </div>
-                <div class="image">
-                    <img src="../image/home-img-3.png" alt="">
+                <div class="swiper-slide slide">
+                    <div class="content">
+                        <span>welcome to the</span>
+                        <h3>Classic Ice <br><span>Cream Parlor</span></h3>
+                        <p>Experience our gourmet ice cream paired with choco, caramel and fress berries.</p>
+                        <a href="" class="btn">Order Now</a>
+                    </div>
+                    <div class="image">
+                        <img src="../image/home-img-3.png" alt="">
+                    </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
     </section>
 
     <div class="service">
@@ -155,20 +155,20 @@
                 <img src="../image/categories1.jpg">
                 <a href="menu.php" class="btn">Sundaes</a>
             </div>
-        </div>
-        <div class="box-container">
+
+
             <div class="box">
                 <img src="../image/categories2.jpg">
                 <a href="menu.php" class="btn">Ice cream cones</a>
             </div>
-        </div>
-        <div class="box-container">
+
+
             <div class="box">
                 <img src="../image/categories3.jpg">
                 <a href="menu.php" class="btn">Milkshake</a>
             </div>
-        </div>
-        <div class="box-container">
+
+
             <div class="box">
                 <img src="../image/categories4.jpg">
                 <a href="menu.php" class="btn">Seasonal Flavors</a>
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="box milk">
-                <img src="../image/milk-image.webp" alt="Milk">
+                <img src="../image/milk-image.avif" alt="Milk">
                 <div class="detail">
                     <h1>Chocolate</h1>
                     <p>Milk from the Fucci farm of Conselic. From Jersey cows which have the characteristic</p>
@@ -299,7 +299,7 @@
 
     <div class="flavor">
         <div class="box-container">
-            <img src="../image/left-banner.JPG" alt="promotional Banner">
+            <img src="../image/left-banner2.JPG" alt="promotional Banner">
             <div class="detail">
                 <h1>Hot deal! Sale up to <span>20% off</span></h1>
                 <p>Limited time only</p>

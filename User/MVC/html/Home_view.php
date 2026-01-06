@@ -198,13 +198,6 @@
                     <p>We are valroha partners and we use a selection of single origin and grand cru.</p>
                 </div>
             </div>
-            <div class="box chocolate">
-                <img src="../image/chocolate-image.webp" alt="Chocolate">
-                <div class="detail">
-                    <h1>Chocolate</h1>
-                    <p>We are valroha partners and we use a selection of single origin and grand cru.</p>
-                </div>
-            </div>
             <div class="box milk">
                 <img src="../image/milk-image.avif" alt="Milk">
                 <div class="detail">

@@ -290,6 +290,8 @@
         </div>
     </div>
 
+    <!--taste2 section end-->
+
     <div class="flavor">
         <div class="box-container">
             <img src="../image/left-banner2.JPG" alt="promotional Banner">

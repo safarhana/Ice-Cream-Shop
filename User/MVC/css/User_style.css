@@ -1068,6 +1068,105 @@ input[type='submit']:hover {
 
 }
 
+.flavor .box-container {
+    background-color: var(--pink-opacity);
+}
+
+.flavor .box-container img {
+    width: 100%;
+}
+
+.flavor .box-container .detail {
+    text-align: center;
+    line-height: 1.5;
+    padding: 2rem 0;
+}
+
+.flavor .box-container .detail h1 {
+    font-size: 3rem;
+}
+
+.flavor .box-container .detail h1 span {
+    color: var(--main-color);
+}
+
+.flavor .box-container .detail p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.usage {
+    background-image: url(../image/bn.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: 4%;
+}
+
+.usage .row {
+    display: flex;
+    align-items: center;
+}
+
+.usage .row.divider {
+    padding: 1rem;
+    width: 45%;
+}
+
+.usage .row .box-container .box {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    align-items: center;
+}
+
+.usage .row .box-container .box img {
+    width: 70px;
+    height: 70px;
+    margin-left: 0.4rem;
+}
+
+.usage .row .box-container .box h3 {
+    font-size: 1.5rem;
+}
+
+.usage .row .box-container .box p {
+    font-size: 1.1rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.usage .row .box-container:first-child {
+    text-align: center;
+}
+
+.pride {
+    background-image: url(../image/ice-creem-banner-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4%;
+    margin: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+}
+
+.pride .detail {
+    padding: right;
+}
+
+.pride .detail p {
+    color: #666;
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
 .newsletter {
     background-image: url(../image/bg3.JPG);
     padding-top: 70px;

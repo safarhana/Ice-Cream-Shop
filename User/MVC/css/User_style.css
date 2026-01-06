@@ -666,7 +666,126 @@ input[type='submit']:hover {
 }
 
 
+/*HOME SCREEN*/
 
+.home {
+    padding: 0rem 5.625%;
+    background-color: #eee;
+}
+
+.home .home-slide .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-top: 5.625rem;
+}
+
+.home .home-slide .slide .content {
+    flex: 1 1 28.125rem;
+}
+
+.home .home-slide .slide .content span {
+    font-size: 1.5625rem;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.home .home-slide .slide .content h3 {
+    font-size: 4.375rem;
+    color: #000;
+}
+
+.home .home-slide .slide .content h3 span {
+    color: var(--main-color);
+    font-size: 4.375;
+}
+
+.home .home-slide .slide .content p {
+    font-size: 1.25rem;
+    color: var(--light-color);
+    padding: 3.125rem 0;
+    line-height: 1.5;
+}
+
+.home .home-slide .slide .image {
+    flex: 1 1 28.125rem;
+}
+
+.home .home-slide .slide .image img {
+    width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+
+/*home screen end*/
+
+/*services section*/
+.service {
+    padding: 6%;
+}
+
+.service .box-container .box {
+    background-color: var(--pink-opacity);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.5;
+
+}
+
+.service .box-container .box .detal {
+    border-left: 1px solid #000;
+    padding-left: 2rem;
+
+}
+
+.service .box-container .box h4 {
+    font-size: 1.5rem;
+}
+
+.service .box-container .box .icon {
+    cursor: pointer;
+    overflow: hidden;
+    width: 130px;
+}
+
+
+.service .box-container .box .icon-box {
+    display: flex;
+    width: 200%;
+    transition: 0.50s ease-in-out;
+}
+
+.service .box-container .box .icon-box .img1,
+.service .box-container .box .icon-box .img2 {
+    flex: 1 0 50%;
+    width: 40px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.service .box-container .box:hover .icon-box {
+
+    transform: translateX(-50%);
+}
+
+.categories {
+    padding: 4%;
+}
+
+.categories .box-container {
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+}
 
 
 .newsletter {

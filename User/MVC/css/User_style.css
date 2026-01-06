@@ -960,7 +960,7 @@ input[type='submit']:hover {
 }
 
 .taste2 .t-banner {
-    background-image: url(../image/bg.jpg);
+    background-image: url(../image/bg.png);
     min-height: 40vh;
     border-radius: 20px;
     position: relative;
@@ -1107,24 +1107,40 @@ input[type='submit']:hover {
 .usage .row {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.usage .row.divider {
+.usage .row .divider {
     padding: 1rem;
-    width: 45%;
+    width: 20%;
+    object-fit: contain;
+}
+
+.usage .row .box-container {
+    flex: 1;
 }
 
 .usage .row .box-container .box {
     display: flex;
-    flex-direction: row-reverse;
     padding: 1rem;
     align-items: center;
+}
+
+.usage .row .box-container:first-child .box {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.usage .row .box-container:last-child .box {
+    flex-direction: row;
+    text-align: left;
 }
 
 .usage .row .box-container .box img {
     width: 70px;
     height: 70px;
-    margin-left: 0.4rem;
+    margin: 0 1rem;
 }
 
 .usage .row .box-container .box h3 {
@@ -1146,7 +1162,7 @@ input[type='submit']:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 4%;
+    padding: 220px 0 273px;
     margin: 80px 0;
     display: flex;
     align-items: center;
@@ -1156,7 +1172,7 @@ input[type='submit']:hover {
 }
 
 .pride .detail {
-    padding: right;
+    padding-right: 10%;
 }
 
 .pride .detail p {

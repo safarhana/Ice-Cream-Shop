@@ -92,6 +92,44 @@
 
     <!--story section end-->
 
+    <div class="team">
+        <div class="heading">
+            <span>Our Team</span>
+            <h1>Quality & passion with our services</h1>
+            <img src="../image/separator-img.png">
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="../image/team-1.jpg" class="img">
+                <div class="content">
+                    <img src="../image/shape-19.png" class="shape">
+                    <h2>James Carter</h2>
+                    <p>Team Leader</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../image/team-2.jpg" class="img">
+                <div class="content">
+                    <img src="../image/shape-19.png" class="shape">
+                    <h2>Sophia Williams</h2>
+                    <p>Pastry Chef</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../image/team-3.jpg" class="img">
+                <div class="content">
+                    <img src="../image/shape-19.png" class="shape">
+                    <h2>Emily Brown</h2>
+                    <p>Creative Team</p>
+                </div>
+            </div>
+        </div>>
+    </div>
+
+    <!-- team section end-->
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <?php include '../php/Footer.php'; ?>
 

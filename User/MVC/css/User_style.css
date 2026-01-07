@@ -666,6 +666,522 @@ input[type='submit']:hover {
 }
 
 
+/*HOME SCREEN*/
+
+.home {
+    padding: 0rem 5.625%;
+    background-color: #eee;
+}
+
+.home .home-slide .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-top: 5.625rem;
+}
+
+.home .home-slide .slide .content {
+    flex: 1 1 28.125rem;
+}
+
+.home .home-slide .slide .content span {
+    font-size: 1.5625rem;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.home .home-slide .slide .content h3 {
+    font-size: 4.375rem;
+    color: #000;
+}
+
+.home .home-slide .slide .content h3 span {
+    color: var(--main-color);
+    font-size: 4.375;
+}
+
+.home .home-slide .slide .content p {
+    font-size: 1.25rem;
+    color: var(--light-color);
+    padding: 3.125rem 0;
+    line-height: 1.5;
+}
+
+.home .home-slide .slide .image {
+    flex: 1 1 28.125rem;
+}
+
+.home .home-slide .slide .image img {
+    width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-color);
+}
+
+/*home screen end*/
+
+/*services section*/
+.service {
+    padding: 6%;
+}
+
+.service .box-container .box {
+    background-color: var(--pink-opacity);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.5;
+
+}
+
+.service .box-container .box .detal {
+    border-left: 1px solid #000;
+    padding-left: 2rem;
+
+}
+
+.service .box-container .box h4 {
+    font-size: 1.5rem;
+}
+
+.service .box-container .box .icon {
+    cursor: pointer;
+    overflow: hidden;
+    width: 130px;
+}
+
+
+.service .box-container .box .icon-box {
+    display: flex;
+    width: 200%;
+    transition: 0.50s ease-in-out;
+}
+
+.service .box-container .box .icon-box .img1,
+.service .box-container .box .icon-box .img2 {
+    flex: 1 0 50%;
+    width: 40px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.service .box-container .box:hover .icon-box {
+
+    transform: translateX(-50%);
+}
+
+.categories {
+    padding: 4%;
+}
+
+.categories .box-container {
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+}
+
+.categories .box-container .box {
+    margin: .5rem;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.categories .box-container .box:hover img {
+    transform: scale(1.1);
+}
+
+.categories .box-container .box img {
+    width: 100%;
+    transition: .5s;
+}
+
+.categories .box-container .box a {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 11;
+    width: 90%;
+    text-align: center;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.menu-banner {
+    width: 100%;
+}
+
+.taste {
+    background-color: url(../image/bg3.jpg);
+    padding: 4% 6%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.taste .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+
+.taste .heading span {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.taste .heading h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+.taste .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.taste .box-container .box {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+
+
+.taste .box-container .box.vanilla {
+    background-color: #ccf0d0;
+
+}
+
+.taste .box-container .box.chocolate {
+    background-color: #d4ecbb;
+}
+
+.taste .box-container .box.milk {
+    background-color: #d3d6f3;
+}
+
+.taste .box-container .box:hover {
+    background-color: #f8d6d6;
+}
+
+.taste .box-container .box img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.taste .box-container .box .detail h1 {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+    color: #333;
+}
+
+.taste .box-container .box .detail p {
+    font-size: 0.9rem;
+    color: #222;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .taste .box-container {
+        grid-template-columns: 1fr;
+    }
+
+    .taste .box-container .box img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.ice-container {
+    position: relative;
+    background-image: url(../image/ice-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.ice-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+
+}
+
+.ice-container .detail {
+    position: absolute;
+    top: 30%;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.ice-container .detail h1 {
+    font-size: 3rem;
+}
+
+.ice-container .detail p {
+    font-size: 1.5rem;
+}
+
+.ice-container .detail p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-bottom: 2rem;
+}
+
+.ice-container .detail .btn {
+    background-color: #000;
+}
+
+.taste2 {
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.taste2 .t-banner {
+    background-image: url(../image/bg.png);
+    min-height: 40vh;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: var(--box-shadow);
+    margin: 1rem;
+}
+
+
+.taste2 .t-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ffffff99;
+}
+
+.taste2 .t-banner .detail {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.taste2 .t-banner .detail p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 20px;
+}
+
+.taste2 .t-banner .detail h1 {
+    text-transform: capitalize;
+}
+
+.taste2 .box-container .box {
+    position: relative;
+}
+
+.taste2 .box-container .box img {
+    width: 100%;
+}
+
+.taste2 .box-container .box .box-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 99%;
+    background-color: var(--pink-opacity);
+    opacity: 0;
+    -webkit-transform: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.taste2 .box-container .box:hover .box-overlay {
+    opacity: 0.88;
+}
+
+.taste2 .box-container .box .box-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3 ease-in-out 0s;
+    -moz-transition: all 0.3 ease-in-out 0s;
+    transition: all 0.3 ease-in-out 0s;
+}
+
+.taste2 .box-container .box:hover .box-details {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+}
+
+.taste2 .box-container .box .box-details h1 {
+    color: var(--main-color);
+    font-size: 500;
+    letter-spacing: 0.15rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.taste2 .box-container .box .box-details p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.fadeIn-bottom {
+    top: 80%;
+
+}
+
+.flavor .box-container {
+    background-color: var(--pink-opacity);
+}
+
+.flavor .box-container img {
+    width: 100%;
+}
+
+.flavor .box-container .detail {
+    text-align: center;
+    line-height: 1.5;
+    padding: 2rem 0;
+}
+
+.flavor .box-container .detail h1 {
+    font-size: 3rem;
+}
+
+.flavor .box-container .detail h1 span {
+    color: var(--main-color);
+}
+
+.flavor .box-container .detail p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.usage {
+    background-image: url(../image/bn.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    padding: 4%;
+}
+
+.usage .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.usage .row .divider {
+    padding: 1rem;
+    width: 20%;
+    object-fit: contain;
+}
+
+.usage .row .box-container {
+    flex: 1;
+}
+
+.usage .row .box-container .box {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+.usage .row .box-container:first-child .box {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.usage .row .box-container:last-child .box {
+    flex-direction: row;
+    text-align: left;
+}
+
+.usage .row .box-container .box img {
+    width: 70px;
+    height: 70px;
+    margin: 0 1rem;
+}
+
+.usage .row .box-container .box h3 {
+    font-size: 1.5rem;
+}
+
+.usage .row .box-container .box p {
+    font-size: 1.1rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.usage .row .box-container:first-child {
+    text-align: center;
+}
+
+.pride {
+    background-image: url(../image/ice-creem-banner-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 220px 0 273px;
+    margin: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+}
+
+.pride .detail {
+    padding-right: 10%;
+}
+
+.pride .detail p {
+    color: #666;
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 
 .newsletter {
     background-image: url(../image/bg3.JPG);

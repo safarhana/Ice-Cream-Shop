@@ -198,13 +198,6 @@
                     <p>We are valroha partners and we use a selection of single origin and grand cru.</p>
                 </div>
             </div>
-            <div class="box chocolate">
-                <img src="../image/chocolate-image.webp" alt="Chocolate">
-                <div class="detail">
-                    <h1>Chocolate</h1>
-                    <p>We are valroha partners and we use a selection of single origin and grand cru.</p>
-                </div>
-            </div>
             <div class="box milk">
                 <img src="../image/milk-image.avif" alt="Milk">
                 <div class="detail">
@@ -297,6 +290,8 @@
         </div>
     </div>
 
+    <!--taste2 section end-->
+
     <div class="flavor">
         <div class="box-container">
             <img src="../image/left-banner2.JPG" alt="promotional Banner">
@@ -317,7 +312,7 @@
                 <div class="box">
                     <img src="../image/icon.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>scoop ice cream</h3>
+                        <h3>Scoop Ice Cream</h3>
                         <p>Choose yur flavour, scoop it into a cone and prepare for a treat.</p>
                     </div>
                 </div>
@@ -325,15 +320,15 @@
                 <div class="box">
                     <img src="../image/icon0.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>add toppings/h3>
-                            <p>Choose from a variety of toppings to enhance your experience.</p>
+                        <h3>Add Toppings</h3>
+                        <p>Choose from a variety of toppings to enhance your experience.</p>
                     </div>
                 </div>
 
                 <div class="box">
                     <img src="../image/icon1.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>enjoy your treat</h3>
+                        <h3>Enjoy Your Treat</h3>
                         <p>Choose yur flavour, scoop it into a cone and prepare for a treat.</p>
                     </div>
                 </div>
@@ -344,7 +339,7 @@
                 <div class="box">
                     <img src="../image/icon2.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>scoop ice cream</h3>
+                        <h3>Scoop Ice Cream</h3>
                         <p>A perfect scoop to brighten your day</p>
                     </div>
                 </div>
@@ -352,7 +347,7 @@
                 <div class="box">
                     <img src="../image/icon3.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>mix flavors</h3>
+                        <h3>Mix Flavors</h3>
                         <p>Make your own experiences.</p>
                     </div>
                 </div>
@@ -360,7 +355,7 @@
                 <div class="box">
                     <img src="../image/icon4.avif" alt="Scoop Ice cream icon">
                     <div class="detail">
-                        <h3>savor</h3>
+                        <h3>Savor</h3>
                         <p>Savor the delightful flavors.</p>
                     </div>
                 </div>
@@ -370,7 +365,7 @@
 
     <div class="pride">
         <div class="detail">
-            <h1>experience the best of<br> irresistable flavors</h1>
+            <h1>Experience the best of<br> irresistable flavors</h1>
             <p>We offer unique flavors of ice cream, crafted with care and love to bring you the perfect cone of ice
                 cream.</p>
             <a href="menu.php" class="btn">shop now</a>

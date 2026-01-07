@@ -85,7 +85,7 @@
                     mango and tangy raspberry sorbet, our flavor are crafted to
                     delight every palate. Whether you prefer dairy-free, vegan or
                     gluten-free options, we have something for everyone. Discover the
-                    joy of variety with every bite.
+                    joy of variety with every bite!<br>
                     <a href="" class="btn">View All Flavors</a>
                 </p>
             </div>
@@ -127,7 +127,7 @@
                     <p>Creative Team</p>
                 </div>
             </div>
-        </div>>
+        </div>
     </div>
 
     <!-- team section end-->
@@ -226,8 +226,8 @@
                     </div>
                     <div>
                         <h2>Vanilla With Honey</h2>
-                        <p>
-                        </p>
+                        <p>Layers of shaped marshmallow candies - bunnies, chicks, and simple flower - make
+                            a memorable gift in a beribboned box.</p>
                     </div>
                 </div>
 
@@ -254,24 +254,29 @@
                         </p>
                     </div>
                 </div>
-                <div class="box">
-                    <img src="../image/form.png" alt="img">
-                </div>
+
+            </div>
+            <div class="box">
+                <img src="../image/form.png" alt="img">
             </div>
         </div>
     </div>
 
     <!-- offer section end-->
 
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="../js/User_script.js"></script>
     <?php include '../php/Footer.php'; ?>
 
 
-    <script src="../js/User_script.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <?php include '../php/Alert.php'; ?>
+
+
 
 </body>
 

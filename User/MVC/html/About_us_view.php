@@ -199,6 +199,67 @@
     </div>
 
     <!--offer section end-->
+    <div class="offer">
+        <div class="box-container">
+            <div class="box">
+                <div class="heading">
+                    <h1>What We Offer</h1>
+                    <img src="../image/separator-img.png" alt="separator">
+                </div>
+                <div class="detail">
+                    <div class="img-box">
+                        <img src="../image/mission.webp" alt="mission">
+                    </div>
+                    <div>
+                        <h2>Mexican Chocolate</h2>
+                        <p>Layers of shaped marshmallow candies - bunnies, chicks, and simple flower - make
+                            a memorable gift in a beribboned box.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img-box">
+                        <img src="../image/mission1.webp" alt="mission">
+                    </div>
+                    <div>
+                        <h2>Vanilla With Honey</h2>
+                        <p>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img-box">
+                        <img src="../image/mission0.webp" alt="mission">
+                    </div>
+                    <div>
+                        <h2>Peppermint Chip</h2>
+                        <p>Layers of shaped marshmallow candies - bunnies, chicks, and simple flower - make
+                            a memorable gift in a beribboned box.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img-box">
+                        <img src="../image/mission2.webp" alt="mission">
+                    </div>
+                    <div>
+                        <h2>Raspberry Sorbet</h2>
+                        <p>Layers of shaped marshmallow candies - bunnies, chicks, and simple flower - make
+                            a memorable gift in a beribboned box.
+                        </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="../image/form.png" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- offer section end-->
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <?php include '../php/Footer.php'; ?>

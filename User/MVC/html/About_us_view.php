@@ -130,6 +130,76 @@
 
     <!-- team section end-->
 
+    <div class="testimonial">
+        <div class="heading">
+            <h1>Testimonial</h1>
+            <img src="../image/separator-img.png">
+        </div>
+        <div class="testimonial-container">
+            <div class="slide-row" id="slide">
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>"The ice cream here is a game-changer! The flavors are so unique and the texture
+                            is incredible."
+                        </p>
+                        <h2>Clara Adams</h2>
+                        <p>Food Critic</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="../image/testimonial (1).jpg">
+                    </div>
+                </div>
+
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>"I can't get enough of their dark chocolate ice cream
+                            . It's rich, decadent and absolutely addictive!"
+                        </p>
+                        <h2>Jessica Smith</h2>
+                        <p>Chef</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="../image/testimonial (2).jpg">
+                    </div>
+                </div>
+
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>"Every scoop brings back cherished memories. Their vanilla
+                            beans ice cream is a true classic."
+                        </p>
+                        <h2>Amelia Johnson</h2>
+                        <p>Author</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="../image/testimonial (3).jpg">
+                    </div>
+                </div>
+
+                <div class="slide-col">
+                    <div class="user-text">
+                        <p>"I admire their commitment to quality and natural ingredients.
+                            The strawberry sorbet is my favorite treat!"
+                        </p>
+                        <h2>Grace Williams</h2>
+                        <p>Ice Cream Enthusiast</p>
+                    </div>
+                    <div class="user-img">
+                        <img src="../image/testimonial (4).jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="indicator">
+            <span class="btn1 active"></span>
+            <span class="btn1"></span>
+            <span class="btn1"></span>
+            <span class="btn1"></span>
+        </div>
+    </div>
+
+    <!--offer section end-->
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <?php include '../php/Footer.php'; ?>
 

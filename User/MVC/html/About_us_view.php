@@ -32,26 +32,28 @@
     </div>
     <div class="journey">
         <div class="box-container">
-            <div class="box"></div>
-            <div class="heading">
-                <span>The Ice Cream Dream</span>
-                <h1>Our journey began with a simple dream</h1>
-                <img src="../image/separator-img.png">
-            </div>
-            <p>Our goal is to make the best ice cream using only the finest,natural
-                ingredients. From rich creamy classics to adventurous new creations,
-                every flavor is meticulously crafted to perfection. We take pride in
-                offering a diverse range of options, including dairy-free, vegan, and
-                gluten-free choices to cater to every palate.
-            </p>
-            <div class="flex-btn">
-                <a href="" class="btn">Read More</a>
-                <a href="menu.php" class="btn">visit our shop</a>
+            <div class="box">
+                <div class="heading">
+                    <span>The Ice Cream Dream</span>
+                    <h1>Our journey began with a simple dream</h1>
+                    <img src="../image/separator-img.png">
+                </div>
+                <p>Our goal is to make the best ice cream using only the finest,natural
+                    ingredients. From rich creamy classics to adventurous new creations,
+                    every flavor is meticulously crafted to perfection. We take pride in
+                    offering a diverse range of options, including dairy-free, vegan, and
+                    gluten-free choices to cater to every palate.
+                </p>
+                <div class="flex-btn">
+                    <a href="" class="btn">Read More</a>
+                    <a href="menu.php" class="btn">visit our shop</a>
+                </div>
             </div>
 
             <div class="box">
-                <img src="../image/journey-img.jpg" class="img">
+                <img src="../image/journey-image.jpg" class="img">
             </div>
+
         </div>
     </div>
 
@@ -231,7 +233,7 @@
 
                 <div class="detail">
                     <div class="img-box">
-                        <img src="../image/mission0.webp" alt="mission">
+                        <img src="../image/mission0.jpg" alt="mission">
                     </div>
                     <div>
                         <h2>Peppermint Chip</h2>

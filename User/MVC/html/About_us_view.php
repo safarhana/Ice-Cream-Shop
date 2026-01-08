@@ -17,7 +17,7 @@
 
 <body>
 
-    <?php include '../php/User_header.php'; ?>
+    <?php include '../html/User_header.php'; ?>
 
     <div class="banner">
         <div class="detail">
@@ -267,7 +267,7 @@
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="../js/User_script.js"></script>
-    <?php include '../php/Footer.php'; ?>
+    <?php include '../html/Footer.php'; ?>
 
 
 

@@ -1625,9 +1625,6 @@ footer .bottom a {
     margin-bottom: -3.7rem;
 }
 
-
-
-
 @media (max-width:768px) {
     .view_page .box {
         flex-direction: column;
@@ -1656,7 +1653,7 @@ footer .bottom a {
         width: 95%;
     }
 
-    /* Orders */
+     /* Orders */
     .orders {
         background-image: url('../image/bg1.jpg');
         background-size: cover;
@@ -1845,61 +1842,452 @@ footer .bottom a {
     }
 }
 
-@media(max-width:991px){
-    #search-btn,#menu-btn{
-        display:inline-block;
+
+/*profile styling */
+.profile {
+    padding: 5% 8%;
+}
+
+.profile .details {
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    margin-top: 2rem;
+}
+
+.profile .details .user {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile .details .user img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    background-color: var(--main-color);
+}
+
+.profile .details .user h3 {
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+
+.profile .details .user p {
+    font-size: 1.7rem;
+    color: gray;
+    margin-bottom: 2rem;
+}
+
+.profile .details .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.profile .details .box-container .box {
+    background-color: #cccccc99;
+}
+
+.profile .details .box-container .box {
+    background-color: #cccccc11;
+    border-radius: .5rem;
+    padding: 1.5rem 2rem;
+    flex: 1 1 30rem;
+}
+
+.profile .details .box-container .box .flex {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+    margin-top: 1rem;
+}
+
+.profile .details .box-container .box .flex .i {
+    font-size: 2.5rem;
+}
+
+.profile .details .box-container .box .flex .h3 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: .2rem;
+}
+
+.profile .details .box-container .box .flex span {
+    font-size: 1.5rem;
+    color: lightgray;
+}
+
+.products {
+    background-image: url('../image/bg1.jpg');
+    padding: 4%;
+}
+
+.products .box-container .box {
+    position: relative;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.products .box-container .box .stock {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-size: 1rem;
+    background-color: var(--white-alpha-40);
+    padding: .4rem 1rem;
+    background-color: palegreen;
+}
+
+.products .box-container .box .image {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    transition: .5s;
+    background-color: palegreen;
+}
+
+.products .box-container .box:hover .image {
+    transform: scale(1.1);
+
+}
+
+.products .box-container .box .content {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    padding: 40px 10px;
+    margin-top: -80px;
+    border-top-right-radius: 80px;
+    text-align: center;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+.products .box-container .box .content .shape {
+    position: absolute;
+    left: 0;
+    top: -80px;
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+.products .box-container .box h3 {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.products .box-container .box .price {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.products .box-container .box .button {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.products .box-container .box .button button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.products .box-container .box .button i,
+.products .box-container .box .button a {
+    color: var(--main-color);
+    margin: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.products .box-container .box .button i:hover,
+.products .box-container .box .button a:hover,
+.products .box-container .box .name:hover {
+    color: var(--pink-color);
+
+}
+
+.products .box-container .box .flex-btn {
+    justify-content: space-between;
+}
+
+.products .box-container .box .flex-btn input {
+    width: 48%;
+    color: var(--main-color);
+    border-radius: 1.5rem;
+    font-size: 18px;
+    height: 40px;
+    box-shadow: var(--box-shadow);
+    margin-top: 10px;
+    text-indent: 15px;
+
+}
+
+.products .box-container .box .flex-btn .btn {
+    font-size: 18px;
+    height: 43px;
+}
+
+.products .more {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.products .fa-edit {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    width: 200px;
+    border-radius: 20px;
+    height: 35px;
+}
+
+.sub-total {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.cart-total {
+    text-align: center;
+    padding: 4%;
+    margin: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+    background-color: var(--white-alpha-25);
+    border: var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+}
+
+.cart-total p {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+}
+
+.cart-total p span {
+    color: var(--main-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.cart-total .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-total .btn {
+    margin: .5rem;
+}
+
+.view_page {
+    background-image: url('../image/bg3.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 6%;
+
+}
+
+.view_page .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+    flex-wrap: wrap;
+    background-color: var(--white-alpha-25);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--white-alpha-40);
+    border-radius: .5rem;
+}
+
+.view_page .box .img-box,
+.view_page .box .detail {
+    flex: 1 1 300px;
+    padding: 2rem;
+    max-width: 50%;
+}
+
+.view_page .box .img-box {
+    width: 100%;
+}
+
+.view_page .box .img-box img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.view_page .box .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.view_page .box .profile-detail {
+    color: lightgray;
+    margin: 1rem 0;
+    line-height: 2;
+}
+
+.view_page .box .price {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.view_page .box .name {
+    color: var(--main-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.service {
+    background-image: url(../image/bg3.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 6%;
+    position: relative;
+    min-height: 100vh;
+}
+
+.service .box-container .box {
+    line-height: 1.5;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+
+.service .box-container .box div {
+    font-size: 20px;
+    color: var(--main-color);
+    margin: 0.5rem;
+    text-transform: capitalize;
+}
+
+.service .box-container .box h1 {
+    font-size: 20px;
+    color: var(--main-color);
+    margin: 0.5rem 0;
+    text-transform: capitalize;
+}
+
+.form-container label {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin: 1rem 0;
+}
+
+.form-container sup {
+    color: red;
+}
+
+.address {
+    padding: 5% 8%;
+    min-height: 50vh;
+}
+
+.address .box {
+    line-height: 2;
+    padding: 2rem 0;
+    background-color: var(--pink-opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.address .box h4 {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.address .box i {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+
+
+@media(max-width:991px) {
+
+    #search-btn,
+    #menu-btn {
+        display: inline-block;
     }
 
-        .header .flex .search-form {
-            position: absolute;
-            top: 99%;
-            left: 0;
-            right: 0;
-            width: auto;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            transition: .2s linear;
-        }
+    .header .flex .search-form {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        width: auto;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
 
-        .header .flex .search-form.active {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
+    .header .flex .search-form.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 
-        .header .flex .navbar {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: #fff;
-            border-top: .1rem solid #fff;
-            padding: 1rem 2rem;
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            transition: .5s;
-        }
+    .header .flex .navbar {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border-top: .1rem solid #fff;
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .5s;
+    }
 
-        .header .flex .navbar.active {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 
-        .header .flex .navbar a {
-            display: block;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background-color: var(--main-color);
-            text-align: center;
-            border-radius: 5rem;
-            color: #fff;
-        }
+    .header .flex .navbar a {
+        display: block;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background-color: var(--main-color);
+        text-align: center;
+        border-radius: 5rem;
+        color: #fff;
+    }
 
-        .header .flex .navbar a:hover {
-            color: #000;
-        }
+    .header .flex .navbar a:hover {
+        color: #000;
+    }
 
-        .divider {
-            display: none;
-        }
+    .divider {
+        display: none;
+    }
 
         .usage .row {
             flex-flow: column;

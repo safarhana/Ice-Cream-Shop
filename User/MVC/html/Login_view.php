@@ -18,7 +18,7 @@
 
 <body>
 
-    <?php include '../php/User_header.php'; ?>
+    <?php include '../html/User_header.php'; ?>
     <div class="banner">
         <div class="detail">
             <h1>Login</h1>
@@ -52,10 +52,12 @@
 
         </form>
     </div>
-    <?php include '../php/Footer.php'; ?>
+
+    <script src="../js/User_script.js"></script>
+    <?php include '../html/Footer.php'; ?>
 
     <!-- custom js link -->
-    <script src="../js/User_script.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 

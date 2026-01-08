@@ -21,7 +21,7 @@
     <?php include '../php/User_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>register</h1>
+            <h1>Login</h1>
             <p>Please login to accesss your account and enjoy all the features <br> our site has to offer.
                 if you don't have an account yet, feel free to sign up!</p>
             <span>

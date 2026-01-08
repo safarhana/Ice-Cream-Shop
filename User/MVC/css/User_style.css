@@ -221,13 +221,14 @@ input[type='submit']:hover {
 
 .banner .detail{
     padding-Left:4%;
-    color:gray;
+    color: #000;
     line-height:1.5;
 }
 
 .banner .detail p{
     font-size:16px;
     margin-bottom:1rem;
+    
     
 }
 

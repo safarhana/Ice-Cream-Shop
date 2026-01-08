@@ -220,7 +220,7 @@ input[type='submit']:hover {
 }
 
 .banner .detail{
-    padding-Left:4%;
+    padding-left: 4%;
     color: #000;
     line-height:1.5;
 }
@@ -840,6 +840,196 @@ footer .bottom a{
     .form-container .register{
         width: 95%;
     }
+
+    /* Orders */
+    .orders {
+        background-image: url('../image/bg1.jpg');
+        background-size: cover;
+    }
+
+    .orders .box-container {
+        padding : 2% 6%;
+    }
+
+    .orders .box-container .box {
+        position: relative;
+        margin: 1rem;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    .orders .box-container .box:hover .image{
+        transform: scale(1.1);
+    }
+    
+    .orders .box-container .box .content {
+        position: relative;
+        display: block;
+        background-color: #fff;
+        padding: 50px 10px;
+        margin-top: -80px;
+        border-top-right-radius: 80px;
+        text-align: center;
+        line-height: 1.5;
+        text-transform: capitalize;
+    }
+
+    .orders .box-container .box .content .shape {
+        position: absolute;
+        left: 0;
+        top: -80px;
+        width: 800px;
+        height: 80px;
+        background-repeat: no-repeat;
+    }
+
+    .orders .box-container .box a .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .orders .box-container .box .date {
+        position: absolute;
+        top: 5%;
+        left: 1%;
+        padding: .5rem 1.5rem;
+        color: #fff;
+        display: inline-block;
+        font-size: .6rem;
+        border-radius: .5rem;
+        background-color: var(--main-color);
+    }
+
+    .orders .box-container .box .image {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+        transition: .5s;
+    }
+    .orders .box-container .box .name {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        color: var(--main-color);
+    }
+
+    .orders .box-container .box .price {
+        font-size: 1rem;
+        color: #000;
+    }
+
+    .orders .box-container .box .status {
+        font-size: 1rem;
+        margin-left: .5rem;
+        text-transform: capitalize;
+    }
+
+    .order-detail {
+        background-image: url('../image/bg1.jpg');
+        background-size: cover;
+        padding: 4rem 0;
+    }
+
+    .order-detail .box-container {
+        border-radius: 0.5rem;
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 2rem;
+    }
+
+    .order-detail .box-container .box  {
+       display: flex;
+       gap: 1.5rem;
+       flex-wrap: wrap;
+       align-items: center;
+       overflow-x: hidden;
+    }
+    .order-detail .box-container .box .col {
+        flex: 1 1 30rem;
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+    .order-detail .box-container .box .image {
+        height: 17rem;
+        width: 100%;
+        object-fit: fill;
+        margin: 1rem 0;
+    }
+
+    .order-detail .box-container .box .col .title {
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        color: #fff;
+        background-color: var(--main-color);
+        border: 2px solid var(--main-color);
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    .order-detail .box-container .box .col .title i {
+        margin-right: 1rem;
+        color: #fff;
+    }
+
+    .order-detail .box-container .box .col .price {
+        color: crimson;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        margin-top: -3rem;
+        
+    }
+
+    .order-detail .box-container .box .col .name{
+        font-size: 1.5rem;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
+    
+    .order-detail .box-container .box .col .user {
+        padding: 0.5rem 0;
+        font-size: 1.3rem;
+        color: gray;
+    }
+
+    .order-detail .box-container .box .col i {
+        margin-right: 1rem;
+        color: gray;
+    }
+
+    .order-detail .box-container .box .col  .grand-total {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem;
+        text-transform: capitalize;
+        flex-wrap: wrap;
+    }
+
+    .order-detail .box-container .box .col  .grand-total {
+        color:orange;
+        font-size: 1.5rem;  
+    }
+
+    .order-detail .box-container .box .col .status {
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        text-transform: capitalize;
+    }
+
+    .order-detail a {
+        margin-top: 3rem;
+    }
+
+    .order-detail .box-container .box .col .btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
 @media(max-width:991px){
     #search-btn,#menu-btn{
         display:inline-block;
@@ -899,5 +1089,5 @@ footer .bottom a{
         flex-flow:column;
     }
 }
-}
+
 

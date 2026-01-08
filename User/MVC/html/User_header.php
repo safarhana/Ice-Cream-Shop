@@ -6,7 +6,7 @@
         <nav class="navbar">
             <a href="Home_view.php">home</a>
             <a href="About_us_view.php">about us</a>
-            <a href="Menu.php">Shop</a>
+            <a href="Menu_view.php">Shop</a>
             <a href="Orders.php">Order</a>
             <a href="Contact.php">Contact</a>
         </nav>

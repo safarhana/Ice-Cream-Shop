@@ -18,7 +18,7 @@
 
 <body>
 
-    <?php include '../php/User_header.php'; ?>
+    <?php include '../html/User_header.php'; ?>
 
     <section class="home" id="home">
         <div class="swiper home-slide">
@@ -372,11 +372,12 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <?php include '../php/Footer.php'; ?>
-
-
     <script src="../js/User_script.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <?php include '../html/Footer.php'; ?>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 

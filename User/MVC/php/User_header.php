@@ -7,7 +7,7 @@
             <a href="Home_view.php">home</a>
             <a href="About_us_view.php">about us</a>
             <a href="Menu.php">Shop</a>
-            <a href="Orders.php">Order</a>
+            <a href="Orders_view.php">Order</a>
             <a href="Contact.php">Contact</a>
         </nav>
         <form action="Search_product.php" method="post" class="search-form">

@@ -1625,9 +1625,6 @@ footer .bottom a {
     margin-bottom: -3.7rem;
 }
 
-
-
-
 @media (max-width:768px) {
     .view_page .box {
         flex-direction: column;

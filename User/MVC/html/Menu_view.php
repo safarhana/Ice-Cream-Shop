@@ -51,19 +51,16 @@
                 while ($fetch_products = $result_products->fetch_assoc()) {
                     ?>
 
-                    <form action="" method="post" class="box <?php if ($fetch_product['stock'] == 0) {
+                    <form action="" method="post" class="box <?php if ($fetch_products['stock'] == 0) {
                         echo 'disabled';
                     } ?>">
                         <img src="../uploaded_files/<?= $fetch_products['image']; ?>" class="image">
-                        <?php if ($fetch_products['stock'] > 9) {
-                            ?>
-                            <span class="stock" style="color:green;">In Stock</span>
-                        <?php } elseif ($fetch_products['stock'] > 0) {
-                            ?>
-                            <span class="stock" style="color:red;">Out of Stock</span>
-                        <?php } else {
-                            ?>
-                            <span class="stock" style="color:red;">Hurry, Only <?= $fetch_products['stock']; ?> left!</span>
+                        <?php if ($fetch_products['stock'] > 9) { ?>
+                            <span class="stock in">In Stock</span>
+                        <?php } elseif ($fetch_products['stock'] > 0) { ?>
+                            <span class="stock low">Hurry, Only <?= $fetch_products['stock']; ?> left!</span>
+                        <?php } else { ?>
+                            <span class="stock out">Out of Stock</span>
                         <?php } ?>
 
                         <div class="content">

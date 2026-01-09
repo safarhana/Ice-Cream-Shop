@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="product">
+    <div class="products">
         <div class="heading">
             <h1>My Cart</h1>
             <img src="../image/separator.png" alt="">
@@ -123,6 +123,17 @@
 
 
     </div>
+
+    <script src="../js/User_script.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <?php include '../html/Footer.php'; ?>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <?php include '../php/Alert.php'; ?>
 </body>
 
 </html>

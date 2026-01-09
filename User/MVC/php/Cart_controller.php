@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
+include '../db/Connect.php';
+
 if (isset($_POST['update_cart'])) {
     $cart_id = $_POST['cart_id'];
     $cart_id = filter_var($cart_id, FILTER_SANITIZE_STRING);

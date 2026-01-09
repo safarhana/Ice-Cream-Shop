@@ -27,7 +27,7 @@
 
             ?>
 
-            <a href="wishlist.php">
+            <a href="Wishlist_view.php">
                 <i class="bx bx-heart"></i>
                 <sup><?= $total_wishlist_items; ?></sup>
             </a>
@@ -41,7 +41,7 @@
 
             ?>
 
-            <a href="cart.php">
+            <a href="Cart_view.php">
                 <i class="bx bx-cart"></i>
                 <sup><?= $total_cart_items; ?></sup>
             </a>

@@ -69,16 +69,23 @@
 
                             <div class="content">
                                 <img src="../image/shape-19.png" alt="" class="shape">
-                                <div>
-                                    <h3 class="name"><?= $fetch_product['name']; ?></h3>
+                                <div class="button">
+
+                                    <div>
+                                        <h3>
+                                            <?= $fetch_product['name']; ?>
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
+                                        <a href="view_page.php?pid=<?= $fetch_product['id']; ?>" class="bx bxs-show"></a>
+                                        <button type="submit" name="delete_item"
+                                            onclick="return confirm('Delete this item from wishlist?');"><i
+                                                class="bx bx-x"></i></button>
+                                    </div>
+
                                 </div>
-                                <div>
-                                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
-                                    <a href="view_page.php?pid=<?= $fetch_product['id']; ?>" class="bx bxs-show"></a>
-                                    <button type="submit" name="delete_item" class="btn"
-                                        onclick="return confirm('Delete this item from wishlist?');"><i
-                                            class="bx bx-x"></i></button>
-                                </div>
+
 
                                 <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
                                 <div class="flex">

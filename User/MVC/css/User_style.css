@@ -1783,7 +1783,7 @@ footer .bottom a {
     }
 
     .order-detail .box-container .box .col .title i {
-        margin-right: 1rem;
+        margin-right: 1rem
         color: #fff;
     }
 
@@ -2194,7 +2194,7 @@ footer .bottom a {
     color: red;
 }
 
-.address {
+ .address {
     padding: 5% 8%;
     min-height: 50vh;
 }
@@ -2207,7 +2207,8 @@ footer .bottom a {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-}
+} 
+
 
 .address .box h4 {
     text-transform: capitalize;
@@ -2228,7 +2229,6 @@ footer .bottom a {
     background-color: #fff;
     box-shadow: var(--box-shadow);
 }
-
 
 
 @media(max-width:991px) {

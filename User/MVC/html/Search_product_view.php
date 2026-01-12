@@ -33,16 +33,29 @@
 
         <div class="box-container">
             <?php
-           
+            // Check if search was submitted
             if (isset($_POST['search_product']) || isset($_POST['search_product_btn'])) {
+                
+                // Sanitize input and prepare MySQLi variables
                 $search_products = $_POST['search_product'];
+                $search_query = "%" . $search_products . "%";
+                $status = 'active';
                 
-                
+                // 1. Prepare MySQLi Statement
                 $select_products = $conn->prepare("SELECT * FROM `products` WHERE name LIKE ? AND status = ?");
-                $select_products->execute(['%'. $search_products. '%', 'active']);
+                
+                // 2. Bind parameters (s = string)
+                $select_products->bind_param("ss", $search_query, $status);
+                
+                // 3. Execute
+                $select_products->execute();
+                
+                // 4. Get the result set
+                $result = $select_products->get_result();
 
-                if ($select_products->rowCount() > 0) {
-                    while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+                // 5. Use num_rows (MySQLi) instead of rowCount (PDO)
+                if ($result->num_rows > 0) {
+                    while ($fetch_products = $result->fetch_assoc()) {
             ?>
                         <form action="" method="post" class="box <?= ($fetch_products['stock'] == 0) ? 'disabled' : ''; ?>">
                             <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_products['image']; ?>" class="image">
@@ -59,7 +72,7 @@
                                 <img src="../image/shape-19.png" alt="" class="shape">
                                 <div class="button">
                                     <div>
-                                        <h3 class="name"><?= $fetch_products['name']; ?></h3>
+                                        <h3 class="name"><?= htmlspecialchars($fetch_products['name']); ?></h3>
                                     </div>
                                     <div>
                                         <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
@@ -78,10 +91,9 @@
             <?php
                     } 
                 } else {
-                    echo '<div class="empty"><p>No products found for this search!</p></div>';
+                    echo '<div class="empty"><p>No products found for "'.htmlspecialchars($search_products).'"!</p></div>';
                 }
             } else {
-               
                 echo '<div class="empty"><p>Please search something else!</p></div>';
             }
             ?>

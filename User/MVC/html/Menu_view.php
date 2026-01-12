@@ -27,7 +27,7 @@
                 for everyone. Shop now and enjoy great deals.
             </p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>login
             </span>
         </div>
@@ -72,7 +72,8 @@
                                 <div>
                                     <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
                                     <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-                                    <a href="View_page_view.php?pid=<?= $fetch_products['id']; ?>" class="bx bxs-show">read</a>
+                                    <a href="Product_detail_view.php?pid=<?= $fetch_products['id']; ?>"
+                                        class="bx bxs-show">read</a>
                                 </div>
                             </div>
                             <p class="price">Price: $<?= $fetch_products['price']; ?></p>

@@ -10,9 +10,9 @@
             <a href="Orders_view.php">Order</a>
             <a href="Contact_view.php">Contact</a>
         </nav>
-        <form action="Search_product.php" method="post" class="search-form">
-            <input type="text" name="Search_product" placeholder="Search product..." required maxlength="100">
-            <button type="submit" class="bx bx-search-alt-2" id="Search_product_btn"></button>
+        <form action="Search_product_view.php" method="post" class="search-form">
+            <input type="text" name="search_product" placeholder="Search product..." required maxlength="100">
+            <button type="submit" class="bx bx-search-alt-2" id="search_product_btn"></button>
         </form>
         <div class="icons">
             <div class="bx bx-list-plus" id="menu-btn"></div>

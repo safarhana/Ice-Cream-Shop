@@ -82,13 +82,9 @@
               <?php
             }
           }
-        }
-      } else {
-        echo '<p class="empty">no orders placed yet!</p>';
-      }
-      ?>
-    </div>
-
+          ?>
+      </div>
+        
     <?php include '../html/Footer.php'; ?>
 
     <!-- custom js link -->

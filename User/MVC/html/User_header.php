@@ -8,7 +8,7 @@
             <a href="About_us_view.php">about us</a>
             <a href="Menu_view.php">Shop</a>
             <a href="Orders_view.php">Order</a>
-            <a href="Contact.php">Contact</a>
+            <a href="Contact_view.php">Contact</a>
         </nav>
         <form action="Search_product.php" method="post" class="search-form">
             <input type="text" name="Search_product" placeholder="Search product..." required maxlength="100">

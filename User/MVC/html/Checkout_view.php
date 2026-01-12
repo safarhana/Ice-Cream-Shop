@@ -44,17 +44,20 @@
                     <div class="box">
                         <div class="input-field">
                             <p>your name<span>*</span></p>
-                            <input type="text" name="name" maxlength="50" placeholder="Enter your name" required>
+                            <input type="text" name="name" maxlength="50" placeholder="Enter your name" class="input"
+                                required>
                         </div>
 
                         <div class="input-field">
                             <p>your number<span>*</span></p>
-                            <input type="text" name="number" maxlength="50" placeholder="Enter your number" required>
+                            <input type="text" name="number" maxlength="50" placeholder="Enter your number"
+                                class="input" required>
                         </div>
 
                         <div class="input-field">
                             <p>your email<span>*</span></p>
-                            <input type="email" name="email" maxlength="50" placeholder="Enter your email" required>
+                            <input type="email" name="email" maxlength="50" placeholder="Enter your email" class="input"
+                                required>
                         </div>
 
                         <div class="input-field">
@@ -64,6 +67,14 @@
                                 <option value="credit or debit card">credit or debit card</option>
                                 <option value="net banking">net banking</option>
                                 <option value="paypal">paypal</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <p>Address Type<span>*</span></p>
+                            <select name="address_type" class="input">
+                                <option value="home">Home</option>
+                                <option value="office">Office</option>
                             </select>
                         </div>
                     </div>
@@ -93,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" name="place_order">place order</button>
+                <button type="submit" name="place_order" class="btn">place order</button>
             </form>
             <div class="summary">
                 <h3>my bag</h3>
@@ -113,12 +124,8 @@
                             <div class="flex">
                                 <img src="../uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
                                 <div>
-                                    <h3 class="name">
-                                        <?= $fetch_get['name']; ?>
-                                    </h3>
-                                    <p class="price">
-                                        <?= $fetch_get['price']; ?>
-                                    </p>
+                                    <h3 class="name"><?= $fetch_get['name']; ?></h3>
+                                    <p class="price"><?= $fetch_get['price']; ?></p>
                                 </div>
                             </div>
                             <?php
@@ -144,13 +151,8 @@
                                 <div class="flex">
                                     <img src="../uploaded_files/<?= $fetch_product['image']; ?>" alt="" class="image">
                                     <div>
-                                        <h3 class="name">
-                                            <?= $fetch_product['name']; ?>
-                                        </h3>
-                                        <p class="price">
-                                            <?= $fetch_product['price']; ?> X
-                                            <?= $fetch_cart['qty']; ?>
-                                        </p>
+                                        <h3 class="name"><?= $fetch_product['name']; ?></h3>
+                                        <p class="price"><?= $fetch_product['price']; ?> X <?= $fetch_cart['qty']; ?></p>
                                     </div>
 
 
@@ -165,9 +167,7 @@
                 </div>
                 <div class="grand-total">
                     <span>total payable amount</span>
-                    <p>
-                        <?= $grand_total; ?>
-                    </p>
+                    <p><?= $grand_total; ?></p>
                 </div>
             </div>
         </div>

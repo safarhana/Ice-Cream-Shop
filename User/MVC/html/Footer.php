@@ -2,7 +2,8 @@
     <div class="content">
         <span>get latest ice cream delights updates</span>
         <h1>subscribe to our newsletter</h1>
-        <p>stay updated with our latest flavors, exclusive offers and exciting <br> events delivered straight to your inbox. join us today!</p>
+        <p>stay updated with our latest flavors, exclusive offers and exciting <br> events delivered straight to your
+            inbox. join us today!</p>
         <div class="input-field">
             <input type="email" name="" placeholder="Enter your email">
             <button class="btn">subscribe</button>
@@ -69,6 +70,6 @@
     </div>
     <div class="bottom">
         <p>Copyright 2024 coding with whatever. All rights reserved</p>
-        <a href="admin panel/login.php">become a seller</a>
+        <a href="../../../Admin/MVC/html/Login_view.php">become a seller</a>
     </div>
 </footer>

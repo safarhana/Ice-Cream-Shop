@@ -79,7 +79,7 @@
                             <p class="price">Price: $<?= $fetch_products['price']; ?></p>
                             <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                             <div class="flex-btn">
-                                <a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>
+                                <a href="Checkout_view.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>
                                 <input type="number" name="qty" required min="1" max="99" value="1" maxlength="2" class="qty">
                             </div>
                         </div>

@@ -19,10 +19,12 @@
 
 <body>
     <?php include '../html/User_header.php'; ?>
+
     <div class="banner">
         <div class="detail">
             <h1>Product detail</h1>
-            <p>
+            <p>Discover all the information about our products here.<br>Explore features, specifications,
+                and pricing to help you make an informed decision.
             </p>
             <span>
                 <a href="Home_view.php">home</a>
@@ -31,17 +33,19 @@
         </div>
     </div>
 
-    <div class="products">
+    <section class="view_page">
         <div class="heading">
-            <h1>Our Latest Flavors</h1>
+            <h1>Product Detail</h1>
             <img src="../image/separator-img.png">
         </div>
 
-        <div class="box-container">
-            <?php
-            $select_products = $conn->prepare("SELECT * FROM `products` WHERE status= ?");
-            $status = 'active';
-            $select_products->bind_param("s", $status);
+        <?php
+
+        if (isset($_GET['pid'])) {
+            $pid = $_GET['pid'];
+
+            $select_products = $conn->prepare("SELECT * FROM `products` WHERE id= ?");
+            $select_products->bind_param("s", $pid);
             $select_products->execute();
             $result_products = $select_products->get_result();
 
@@ -49,48 +53,50 @@
                 while ($fetch_products = $result_products->fetch_assoc()) {
                     ?>
 
-                    <form action="" method="post" class="box <?php if ($fetch_products['stock'] == 0) {
-                        echo 'disabled';
-                    } ?>">
-                        <img src="../uploaded_files/<?= $fetch_products['image']; ?>" class="image">
-                        <?php if ($fetch_products['stock'] > 9) { ?>
-                            <span class="stock in">In Stock</span>
-                        <?php } elseif ($fetch_products['stock'] > 0) { ?>
-                            <span class="stock low">Hurry, Only <?= $fetch_products['stock']; ?> left!</span>
-                        <?php } else { ?>
-                            <span class="stock out">Out of Stock</span>
-                        <?php } ?>
-
-                        <div class="content">
-                            <img src="../image/shape-19.png" alt="" class="shape">
-                            <div class="button">
-                                <div>
-                                    <h3 class="name"><?= $fetch_products['name']; ?></h3>
-                                </div>
-                                <div>
-                                    <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
-                                    <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-                                    <a href="View_page_view.php?pid=<?= $fetch_products['id']; ?>" class="bx bxs-show">read</a>
-                                </div>
-                            </div>
-                            <p class="price">Price: $<?= $fetch_products['price']; ?></p>
-                            <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
-                            <div class="flex-btn">
-                                <a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>
-                                <input type="number" name="qty" required min="1" max="99" value="1" maxlength="2" class="qty">
-                            </div>
+                    <form action="" method="post" class="box">
+                        <div class="img-box">
+                            <img src="../uploaded_files/<?= $fetch_products['image']; ?>" class="image">
                         </div>
+                        <div class="detail">
+
+                            <?php if ($fetch_products['stock'] > 9) { ?>
+                                <span class="stock in">In Stock</span>
+                            <?php } elseif ($fetch_products['stock'] > 0) { ?>
+                                <span class="stock low">Hurry, Only <?= $fetch_products['stock']; ?> left!</span>
+                            <?php } else { ?>
+                                <span class="stock out">Out of Stock</span>
+                            <?php } ?>
+                            <p class="price"><?= $fetch_products['price']; ?></p>
+                            <div class="name"><?= $fetch_products['name']; ?></div>
+                            <p class="product-detail"><?= $fetch_products['product_detail']; ?></p>
+                            <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
+                            <div class="button">
+                                <button type="submit" name="add_to_wishlist" class="btn">Add to Wishlist<i
+                                        class="bx bx-heart"></i></button>
+                                <input type="hidden" name="qty" value="1" min="0" class="quantity">
+                                <button type="submit" name="add_to_cart" class="btn">Add to Cart<i class="bx bx-cart"></i></button>
+
+
+                            </div>
+
+                        </div>
+
                     </form>
                     <?php
                 }
-            } else {
-                echo '<div class="empty">
-            <p>No Products Added Yet!</p>
-            </div>';
             }
-            ?>
+        }
+        ?>
+    </section>
+    <div class="products">
+        <div class="heading">
+            <h1>Related Products</h1>
+            <p>Explore a selection of our most popular and highly-rated products.</p>
+            <img src="../image/separator-img.png" alt="">
         </div>
+        <?php include 'Shop_view.php'; ?>
     </div>
+
 
     <script src="../js/User_script.js"></script>
 

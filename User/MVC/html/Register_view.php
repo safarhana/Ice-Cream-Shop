@@ -25,7 +25,7 @@
             <p>Join us today to get access to exclusive offers, features, and more. It's quick and <br> easy to create
                 an account, and you'll be able to enjoy all the benefits we have to offer.</p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>register
             </span>
         </div>

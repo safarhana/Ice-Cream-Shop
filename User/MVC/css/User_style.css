@@ -223,10 +223,10 @@ input[type='submit']:hover {
 
 }
 
-.banner .detail{
+.banner .detail {
     padding-left: 4%;
     color: #000;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 .banner .detail p {
@@ -1625,6 +1625,145 @@ footer .bottom a {
     margin-bottom: -3.7rem;
 }
 
+/* checkout */
+.checkout {
+    background-image: url('../image/bg1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 6%;
+
+}
+
+.checkout .row {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
+}
+
+.checkout .row form,
+.checkout .summary {
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    width: 1000px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.checkout .row h3 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.checkout .row .box {
+    flex: 1 1 20rem;
+}
+
+.checkout .row form input {
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: .5rem;
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1rem;
+
+}
+
+.checkout select.input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: .5rem;
+
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1rem;
+
+    font-size: 1.3rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.checkout .row form .flex {
+    display: flex;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.checkout .row form p {
+    text-align: left;
+    padding-top: .5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.checkout .row form span {
+    color: red;
+}
+
+.checkout .row form .btn {
+    width: 100%;
+}
+
+.checkout .summary .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+}
+
+.checkout .summary .name {
+    font-size: 1.2rem;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.checkout .summary .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: .5rem;
+}
+
+.checkout .summary .flex .image {
+    box-shadow: var(--box-shadow);
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin-right: 2rem;
+}
+
+.checkout .summary .price {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.checkout .summary .grand-total {
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    text-transform: capitalize;
+    padding: 2rem 0;
+}
+
+.checkout .summary .grand-total p {
+    color: red;
+    margin-left: 5rem;
+}
+
 @media (max-width:768px) {
     .view_page .box {
         flex-direction: column;
@@ -1653,14 +1792,14 @@ footer .bottom a {
         width: 95%;
     }
 
-     /* Orders */
+    /* Orders */
     .orders {
         background-image: url('../image/bg1.jpg');
         background-size: cover;
     }
 
     .orders .box-container {
-        padding : 2% 6%;
+        padding: 2% 6%;
     }
 
     .orders .box-container .box {
@@ -1670,10 +1809,10 @@ footer .bottom a {
         overflow: hidden;
     }
 
-    .orders .box-container .box:hover .image{
+    .orders .box-container .box:hover .image {
         transform: scale(1.1);
     }
-    
+
     .orders .box-container .box .content {
         position: relative;
         display: block;
@@ -1718,6 +1857,7 @@ footer .bottom a {
         object-fit: cover;
         transition: .5s;
     }
+
     .orders .box-container .box .name {
         font-size: 1.2rem;
         text-transform: capitalize;
@@ -1750,13 +1890,14 @@ footer .bottom a {
         padding: 2rem;
     }
 
-    .order-detail .box-container .box  {
-       display: flex;
-       gap: 1.5rem;
-       flex-wrap: wrap;
-       align-items: center;
-       overflow-x: hidden;
+    .order-detail .box-container .box {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        overflow-x: hidden;
     }
+
     .order-detail .box-container .box .col {
         flex: 1 1 30rem;
         font-size: 1rem;
@@ -1783,8 +1924,7 @@ footer .bottom a {
     }
 
     .order-detail .box-container .box .col .title i {
-        margin-right: 1rem;
-        color: #fff;
+        margin-right: 1rem color: #fff;
     }
 
     .order-detail .box-container .box .col .price {
@@ -1792,15 +1932,15 @@ footer .bottom a {
         font-size: 1rem;
         padding: 0.5rem 0;
         margin-top: -3rem;
-        
+
     }
 
-    .order-detail .box-container .box .col .name{
+    .order-detail .box-container .box .col .name {
         font-size: 1.5rem;
         text-overflow: ellipsis;
         overflow-x: hidden;
     }
-    
+
     .order-detail .box-container .box .col .user {
         padding: 0.5rem 0;
         font-size: 1.3rem;
@@ -1812,7 +1952,7 @@ footer .bottom a {
         color: gray;
     }
 
-    .order-detail .box-container .box .col  .grand-total {
+    .order-detail .box-container .box .col .grand-total {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1821,9 +1961,9 @@ footer .bottom a {
         flex-wrap: wrap;
     }
 
-    .order-detail .box-container .box .col  .grand-total {
-        color:orange;
-        font-size: 1.5rem;  
+    .order-detail .box-container .box .col .grand-total {
+        color: orange;
+        font-size: 1.5rem;
     }
 
     .order-detail .box-container .box .col .status {
@@ -1907,7 +2047,7 @@ footer .bottom a {
     margin-top: 1rem;
 }
 
-.profile .details .box-container .box .flex .i {
+.profile .details .box-container .box .flex i {
     font-size: 2.5rem;
 }
 
@@ -2209,6 +2349,7 @@ footer .bottom a {
     border-radius: 10px;
 }
 
+
 .address .box h4 {
     text-transform: capitalize;
     font-size: 1.5rem;
@@ -2228,7 +2369,6 @@ footer .bottom a {
     background-color: #fff;
     box-shadow: var(--box-shadow);
 }
-
 
 
 @media(max-width:991px) {
@@ -2289,7 +2429,7 @@ footer .bottom a {
         display: none;
     }
 
-        .usage .row {
-            flex-flow: column;
-        }
+    .usage .row {
+        flex-flow: column;
+    }
 }

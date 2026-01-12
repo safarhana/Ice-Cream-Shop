@@ -27,7 +27,7 @@
                 for everyone. Shop now and enjoy great deals.
             </p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>login
             </span>
         </div>

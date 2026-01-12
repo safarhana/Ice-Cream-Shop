@@ -25,7 +25,7 @@
             <p>Please login to accesss your account and enjoy all the features <br> our site has to offer.
                 if you don't have an account yet, feel free to sign up!</p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>login
             </span>
         </div>

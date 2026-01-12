@@ -1,11 +1,18 @@
 <?php
 include '../db/Connect.php';
 
-if (isset($_COOKIE['user_id'])) {
-    $user_id = $_COOKIE['user_id'];
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
 } else {
     $user_id = '';
 }
+
+
+
 
 if (isset($_POST['submit'])) {
 

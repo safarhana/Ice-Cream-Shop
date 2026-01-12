@@ -95,7 +95,81 @@
                 </div>
                 <button type="submit" name="place_order">place order</button>
             </form>
+            <div class="summary">
+                <h3>my bag</h3>
+                <div class="box-container">
+                    <?php
+                    $grand_total = 0;
+                    if (isset($_GET['get_id'])) {
+                        $select_get = $conn->prepare("SELECT * FROM `products` WHERE id=?");
+                        $select_get->bind_param("s", $_GET["get_id"]);
+                        $select_get->execute();
+                        $select_get_result = $select_get->get_result();
+                        while ($fetch_get = $select_get_result->fetch_assoc()) {
+                            $sub_total = $fetch_get['price'];
+                            $grand_total += $sub_total;
 
+                            ?>
+                            <div class="flex">
+                                <img src="../uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
+                                <div>
+                                    <h3 class="name">
+                                        <?= $fetch_get['name']; ?>
+                                    </h3>
+                                    <p class="price">
+                                        <?= $fetch_get['price']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    } else {
+                        $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id=?");
+                        $select_cart->bind_param("s", $user_id);
+                        $select_cart->execute();
+                        $select_cart_result = $select_cart->get_result();
+
+                        if ($select_cart_result->num_rows > 0) {
+                            while ($fetch_cart = $select_cart_result->fetch_assoc()) {
+                                $select_product = $conn->prepare("SELECT * FROM `products` WHERE id=?");
+                                $select_product->bind_param("s", $fetch_cart['product_id']);
+                                $select_product->execute();
+                                $select_product_result = $select_product->get_result();
+                                $fetch_product = $select_product_result->fetch_assoc();
+
+                                $sub_total = ($fetch_cart['qty'] * $fetch_product['price']);
+                                $grand_total += $sub_total;
+                                ?>
+
+                                <div class="flex">
+                                    <img src="../uploaded_files/<?= $fetch_product['image']; ?>" alt="" class="image">
+                                    <div>
+                                        <h3 class="name">
+                                            <?= $fetch_product['name']; ?>
+                                        </h3>
+                                        <p class="price">
+                                            <?= $fetch_product['price']; ?> X
+                                            <?= $fetch_cart['qty']; ?>
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                                <?php
+                            }
+                        } else {
+                            echo '<p class="empty">Your cart is empty!</p>';
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="grand-total">
+                    <span>total payable amount</span>
+                    <p>
+                        <?= $grand_total; ?>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -22,7 +22,7 @@
             <h1>Wishlist</h1>
             <p>Your Wishlist.</p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>Wishlist
             </span>
         </div>

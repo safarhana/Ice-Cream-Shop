@@ -22,7 +22,7 @@
             <h1>Cart</h1>
             <p>Your Cart.</p>
             <span>
-                <a href="Home.php">home</a>
+                <a href="Home_view.php">home</a>
                 <i class="bx bx-right-arrow-alt"></i>Cart
             </span>
         </div>

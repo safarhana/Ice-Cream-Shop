@@ -25,7 +25,7 @@
       <p>View and manage all of your orders in one place. <br>You can track the status of your orders,
         view order details, and more.</p>
       <span>
-        <a href="Home.php">home</a>
+        <a href="Home_view.php">home</a>
         <i class="bx bx-right-arrow-alt"></i>My Orders
       </span>
     </div>

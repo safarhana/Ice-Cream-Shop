@@ -223,10 +223,10 @@ input[type='submit']:hover {
 
 }
 
-.banner .detail{
+.banner .detail {
     padding-left: 4%;
     color: #000;
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 .banner .detail p {
@@ -1653,14 +1653,14 @@ footer .bottom a {
         width: 95%;
     }
 
-     /* Orders */
+    /* Orders */
     .orders {
         background-image: url('../image/bg1.jpg');
         background-size: cover;
     }
 
     .orders .box-container {
-        padding : 2% 6%;
+        padding: 2% 6%;
     }
 
     .orders .box-container .box {
@@ -1670,10 +1670,10 @@ footer .bottom a {
         overflow: hidden;
     }
 
-    .orders .box-container .box:hover .image{
+    .orders .box-container .box:hover .image {
         transform: scale(1.1);
     }
-    
+
     .orders .box-container .box .content {
         position: relative;
         display: block;
@@ -1718,6 +1718,7 @@ footer .bottom a {
         object-fit: cover;
         transition: .5s;
     }
+
     .orders .box-container .box .name {
         font-size: 1.2rem;
         text-transform: capitalize;
@@ -1750,13 +1751,14 @@ footer .bottom a {
         padding: 2rem;
     }
 
-    .order-detail .box-container .box  {
-       display: flex;
-       gap: 1.5rem;
-       flex-wrap: wrap;
-       align-items: center;
-       overflow-x: hidden;
+    .order-detail .box-container .box {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        overflow-x: hidden;
     }
+
     .order-detail .box-container .box .col {
         flex: 1 1 30rem;
         font-size: 1rem;
@@ -1792,15 +1794,15 @@ footer .bottom a {
         font-size: 1rem;
         padding: 0.5rem 0;
         margin-top: -3rem;
-        
+
     }
 
-    .order-detail .box-container .box .col .name{
+    .order-detail .box-container .box .col .name {
         font-size: 1.5rem;
         text-overflow: ellipsis;
         overflow-x: hidden;
     }
-    
+
     .order-detail .box-container .box .col .user {
         padding: 0.5rem 0;
         font-size: 1.3rem;
@@ -1812,7 +1814,7 @@ footer .bottom a {
         color: gray;
     }
 
-    .order-detail .box-container .box .col  .grand-total {
+    .order-detail .box-container .box .col .grand-total {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1821,9 +1823,9 @@ footer .bottom a {
         flex-wrap: wrap;
     }
 
-    .order-detail .box-container .box .col  .grand-total {
-        color:orange;
-        font-size: 1.5rem;  
+    .order-detail .box-container .box .col .grand-total {
+        color: orange;
+        font-size: 1.5rem;
     }
 
     .order-detail .box-container .box .col .status {
@@ -1907,7 +1909,7 @@ footer .bottom a {
     margin-top: 1rem;
 }
 
-.profile .details .box-container .box .flex .i {
+.profile .details .box-container .box .flex i {
     font-size: 2.5rem;
 }
 
@@ -2289,7 +2291,7 @@ footer .bottom a {
         display: none;
     }
 
-        .usage .row {
-            flex-flow: column;
-        }
+    .usage .row {
+        flex-flow: column;
+    }
 }

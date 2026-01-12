@@ -25,7 +25,7 @@
             <p>At Ice Delights, we craft the finest ice cream using quality<br>ingredients creating unforgetatable
                 flavors that bring joy to every scoop.</p>
             <span>
-                <a href="Home.php">Home</a>
+                <a href="Home_view.php">Home</a>
                 <i class="bx bx-right-arrow-alt"></i>about us
             </span>
         </div>

@@ -22,7 +22,7 @@ if (isset($_POST['place_order'])) {
     $method = $_POST['method'];
     $method = filter_var($method, FILTER_SANITIZE_STRING);
 
-    $address = $_POST['address'] . ', ' . $_POST['street'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ', ' . $_POST['pin'];
+    $address = $_POST['flat'] . ', ' . $_POST['street'] . ', ' . $_POST['city'] . ', ' . $_POST['country'] . ', ' . $_POST['pin'];
     $address = filter_var($address, FILTER_SANITIZE_STRING);
 
     $address_type = $_POST['address_type'];
@@ -32,7 +32,7 @@ if (isset($_POST['place_order'])) {
     $method = filter_var($method, FILTER_SANITIZE_STRING);
 
     $verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-    $verify_cart->bind_param("ssss", $name, $number, $email, $method);
+    $verify_cart->bind_param("s", $user_id);
     $verify_cart->execute();
     $result_cart = $verify_cart->get_result();
 
@@ -44,34 +44,35 @@ if (isset($_POST['place_order'])) {
         if ($result_product->num_rows > 0) {
             while ($fetch_p = $result_product->fetch_assoc()) {
                 $seller_id = $fetch_p['seller_id'];
+                $id = unique_id();
                 $qty = 1;
                 $insert_order = $conn->prepare("INSERT INTO `orders`(id,user_id, seller_id, name, number, email, method, address, address_type, product_id, price,  qty) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $insert_order->bind_param("sssssssssssi", $id, $user_id, $seller_id, $name, $number, $email, $method, $address, $address_type, $fetch_p['id'], $fetch_p['price'], $qty);
+                $insert_order->bind_param("ssssssssssss", $id, $user_id, $seller_id, $name, $number, $email, $method, $address, $address_type, $fetch_p['id'], $fetch_p['price'], $qty);
                 $insert_order->execute();
-                header('Location: order_view.php');
             }
+            header('Location: ../html/Orders_view.php');
         } else {
             $warning_msg[] = 'Something went wrong';
         }
     } elseif ($result_cart->num_rows > 0) {
         while ($fetch_cart = $result_cart->fetch_assoc()) {
             $s_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-            $s_product->bind_param("s", $_cart['product_id']);
+            $s_product->bind_param("s", $fetch_cart['product_id']);
             $s_product->execute();
             $f_product = $s_product->get_result()->fetch_assoc();
             $seller_id = $f_product['seller_id'];
+            $id = unique_id();
             $qty = $fetch_cart['qty'];
             $insert_order = $conn->prepare("INSERT INTO `orders`(id,user_id, seller_id, name, number, email, method, address, address_type, product_id, price,  qty) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $insert_order->bind_param("sssssssssssi", $id, $user_id, $seller_id, $name, $number, $email, $method, $address, $address_type, $fetch_cart['product_id'], $fetch_cart['price'], $fetch_cart['qty']);
+            $insert_order->bind_param("ssssssssssss", $id, $user_id, $seller_id, $name, $number, $email, $method, $address, $address_type, $fetch_cart['product_id'], $fetch_cart['price'], $fetch_cart['qty']);
             $insert_order->execute();
-            header('Location: order_view.php');
         }
 
         if ($insert_order) {
             $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
             $delete_cart->bind_param("s", $user_id);
             $delete_cart->execute();
-            header('Location: order_view.php');
+            header('Location: ../html/Orders_view.php');
         } else {
             $warning_msg[] = 'Something went wrong';
         }

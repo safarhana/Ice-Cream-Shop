@@ -116,7 +116,7 @@
                         <button type="submit" name="empty_cart" class="btn"
                             onclick="return confirm('Empty your cart?');">Empty Cart</button>
                     </form>
-                    <a href="checkout.php" class="btn">Proceed to Checkout</a>
+                    <a href="checkout_view.php" class="btn">Proceed to Checkout</a>
                 </div>
             </div>
         <?php } ?>

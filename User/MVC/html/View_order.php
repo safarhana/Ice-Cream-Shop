@@ -42,15 +42,19 @@
       <?php
       $grand_total = 0;
       $select_order = $conn->prepare("SELECT * FROM `orders` WHERE id = ? LIMIT 1");
-      $select_order->execute([$get_id]);
+      $select_order->bind_param("i", $get_id);
+      $select_order->execute();
+      $result_order = $select_order->get_result();
 
-      if ($select_order->rowCount() > 0) {
-        while ($fetch_order = $select_order->fetch(PDO::FETCH_ASSOC)) {
+      if ($result_order->num_rows > 0) {
+        while ($fetch_order = $result_order->fetch_assoc()) {
           $select_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
-          $select_product->execute([$fetch_order['product_id']]);
+          $select_product->bind_param("i", $fetch_order['product_id']);
+          $select_product->execute();
+          $result_product = $select_product->get_result();
 
-          if ($select_product->rowCount() > 0) {
-            while ($fetch_product = $select_product->fetch(PDO::FETCH_ASSOC)) {
+          if ($result_product->num_rows > 0) {
+            while ($fetch_product = $result_product->fetch_assoc()) {
               $sub_total = $fetch_order['price'] * $fetch_order['qty'];
               $grand_total = $sub_total;
               ?>

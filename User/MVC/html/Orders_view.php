@@ -39,28 +39,32 @@
     <div class="box-container">
       <?php
       $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ? ORDER BY date DESC");
-      $select_orders->execute([$user_id]);
+      $select_orders->bind_param("i", $user_id);
+      $select_orders->execute();
+      $result_orders = $select_orders->get_result();
 
-      if ($select_orders->rowCount() > 0) {
-        while ($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)) {
+      if ($result_orders->num_rows > 0) {
+        while ($fetch_orders = $result_orders->fetch_assoc()) {
           $product_id = $fetch_orders['product_id'];
           $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-          $select_orders->execute([$product_id]);
+          $select_products->bind_param("i", $product_id);
+          $select_products->execute();
+          $result_products = $select_products->get_result();
 
-          if ($select_products->rowCount() > 0) {
-            while ($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)) {
+          if ($result_products->num_rows > 0) {
+            while ($fetch_products = $result_products->fetch_assoc()) {
               ?>
               <div class="box" <?php if ($fetch_orders['status'] == 'canceled') {
                 echo 'style="border: 2px solid red;"
           ';
               } ?>>
                 <a href="View_order.php?get_id=<?= $fetch_orders['id']; ?>">
-                  <img src="uploaded_files/<?= $fetch_products['image']; ?>" class="image">
+                  <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_products['image']; ?>" class="image">
                   <p class="date">
                     <i class="bx bx-calendar-alt"></i> <?= $fetch_orders['date']; ?>
                   </p>
                   <div class="content">
-                    <img src="image/shape-19.png" class="shape">
+                    <img src="../../../Admin/MVC/image/shape-19.png" class="shape">
                     <div class="row">
                       <h3 class="name"><?= $fetch_products['name']; ?></h3>
                       <p class="price">Price: <?= $fetch_products['price']; ?>/-</p>
@@ -72,7 +76,8 @@
                       } else {
                         echo 'style="color: green;"';
                       }
-                      ?>">
+                      ?>
+                      >
                         <?= $fetch_orders['status']; ?>
                       </p>
                     </div>
@@ -82,8 +87,10 @@
               <?php
             }
           }
-          ?>
-      </div>
+        }
+      }
+      ?>
+    </div>
         
     <?php include '../html/Footer.php'; ?>
 

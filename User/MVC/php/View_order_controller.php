@@ -14,8 +14,10 @@ if (isset($_GET['get_id'])) {
 }
 
 if(isset($_POST['cancel'])) {
+    $status = 'canceled';
     $update_order = $conn->prepare("UPDATE `orders` SET status = ? WHERE id = ?");
-    $update_order->execute(['canceled', $get_id]);
+    $update_order->bind_param("si", $status, $get_id);
+    $update_order->execute();
     header('location:Orders_view.php');
     exit();
 }

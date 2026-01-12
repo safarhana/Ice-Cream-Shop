@@ -54,7 +54,8 @@
                     <form action="" method="post" class="box <?php if ($fetch_products['stock'] == 0) {
                         echo 'disabled';
                     } ?>">
-                        <img src="../uploaded_files/<?= $fetch_products['image']; ?>" class="image">
+                        
+                        <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_products['image']; ?>" class="image">
                         <?php if ($fetch_products['stock'] > 9) { ?>
                             <span class="stock in">In Stock</span>
                         <?php } elseif ($fetch_products['stock'] > 0) { ?>

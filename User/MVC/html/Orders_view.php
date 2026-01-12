@@ -64,13 +64,13 @@
                     <div class="row">
                       <h3 class="name"><?= $fetch_products['name']; ?></h3>
                       <p class="price">Price: <?= $fetch_products['price']; ?>/-</p>
-                      <p class="status" style+"color: <?php
+                      <p class="status" <?php
                       if ($fetch_orders['status'] == 'delivered') {
-                        echo 'orange';
+                        echo 'style="color: orange;"';
                       } elseif ($fetch_orders['status'] == 'canceled') {
-                        echo 'red';
+                        echo 'style="color: red;"';
                       } else {
-                        echo 'orange';
+                        echo 'style="color: green;"';
                       }
                       ?>">
                         <?= $fetch_orders['status']; ?>

@@ -64,7 +64,7 @@
                 <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" alt="Profile Image">
                 <h3 style="margin-bottom: 1rem;"><?= $fetch_profile['name']; ?></h3>
                 <div class="flex-btn">
-                    <a href="Profile.php" class="btn">view profile</a>
+                    <a href="User_profile_view.php" class="btn">view profile</a>
                     <a href="../php/User_logout.php" onclick="return confirm('Logout from this website?');"
                         class="btn">logout</a>
                 </div>

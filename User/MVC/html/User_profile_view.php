@@ -43,7 +43,7 @@
                     <?= $fetch_profile['name']; ?>
                 </h3>
                 <span>User</span>
-                <a href="Update_view.php" class="btn">Update Profile</a>
+                <a href="Update_user_view.php" class="btn">Update Profile</a>
             </div>
             <div class="box-container">
                 <div class="box">

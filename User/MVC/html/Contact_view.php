@@ -98,28 +98,22 @@
     <div class="box-container">
         <div class="box">
             <i class="bx bxs-map-alt"></i>
-            <div>
-                <h4>Address</h4>
-                <p>132, My Street<br>Kingston, New York 12401</p>
-            </div>
+            <h4>Address</h4>
+            <p>132, My Street<br>Kingston, New York 12401</p>
         </div>
 
         <div class="box">
             <i class="bx bxs-phone-incoming"></i>
-            <div>
-                <h4>Phone Number</h4>
-                <p>(+1) 331-233-0909</p>
-                <p>(+1) 331-333-0910</p>
-            </div>
+            <h4>Phone Number</h4>
+            <p>(+1) 331-233-0909</p>
+            <p>(+1) 331-333-0910</p>
         </div>
 
         <div class="box">
             <i class="bx bxs-envelope"></i>
-            <div>
-                <h4>Email</h4>
-                <p>Farhana18@gmail.com</p>
-                <p>Farhana18@gmail.com</p>
-            </div>
+            <h4>Email</h4>
+            <p>Farhana18@gmail.com</p>
+            <p>Farhana18@gmail.com</p>
         </div>
     </div>
 </div>

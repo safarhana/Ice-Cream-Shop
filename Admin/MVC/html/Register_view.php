@@ -15,7 +15,7 @@
 <body>
 
     <div class="form-container">
-        <form action="" method="post" enctype="multipart/form-data" class="register">
+        <form action="" onsubmit="return handleSubmit()" method="post" enctype="multipart/form-data" class="register">
 
             <h2>Register Now</h2>
 
@@ -63,6 +63,7 @@
         </form>
     </div>
 
+    <script src="../js/Register_validation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <?php include 'Alert.php'; ?>
 

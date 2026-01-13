@@ -33,7 +33,7 @@
 
 
     <div class="form-container">
-        <form action="" method="post" enctype="multipart/form-data" class="register">
+        <form action="" onsubmit="return handleSubmit()" method="post" enctype="multipart/form-data" class="register">
 
             <h2>Register Now</h2>
 
@@ -82,6 +82,7 @@
     </div>
 
     <script src="../js/User_script.js"></script>
+    <script src="../js/Register_validation.js"></script>
     <?php include '../html/Footer.php'; ?>
 
     <!-- custom js link -->

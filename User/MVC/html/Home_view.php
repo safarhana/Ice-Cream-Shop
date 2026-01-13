@@ -153,25 +153,25 @@
         <div class="box-container">
             <div class="box">
                 <img src="../image/categories1.jpg">
-                <a href="menu.php" class="btn">Sundaes</a>
+                <a href="Menu_view.php" class="btn">Sundaes</a>
             </div>
 
 
             <div class="box">
                 <img src="../image/categories2.jpg">
-                <a href="menu.php" class="btn">Ice cream cones</a>
+                <a href="Menu_view.php" class="btn">Ice cream cones</a>
             </div>
 
 
             <div class="box">
                 <img src="../image/categories3.jpg">
-                <a href="menu.php" class="btn">Milkshake</a>
+                <a href="Menu_view.php" class="btn">Milkshake</a>
             </div>
 
 
             <div class="box">
                 <img src="../image/categories4.jpg">
-                <a href="menu.php" class="btn">Seasonal Flavors</a>
+                <a href="Menu_view.php" class="btn">Seasonal Flavors</a>
             </div>
         </div>
     </div>
@@ -216,7 +216,7 @@
                 Relish in the sweetness of cool treats, <br>made to bring smiles and joy, bite after bite.
                 Let out dessets brng smile to your face and a spark to your day!
             </p>
-            <a href="menu.php" class="btn">Shop Now</a>
+            <a href="Menu_view.php" class="btn">Shop Now</a>
         </div>
     </div>
 
@@ -235,7 +235,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>fruits ice cream</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
             <div class="box">
@@ -244,7 +244,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>Strawberry and Lingonberry</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
 
@@ -254,7 +254,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>Strawberry and Coffee cookies ice cream</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
 
@@ -264,7 +264,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>Bubble Mochi Ice Cream</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
 
@@ -274,7 +274,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>Mango Ice Cream</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
 
@@ -284,7 +284,7 @@
                 <div class="box-details fadeIn-bottom">
                     <h1>Chocolate Ice Cream</h1>
                     <p>find your taste for desserts</p>
-                    <a href="menu.php" class="btn">explore more</a>
+                    <a href="Menu_view.php" class="btn">explore more</a>
                 </div>
             </div>
         </div>
@@ -298,7 +298,7 @@
             <div class="detail">
                 <h1>Hot deal! Sale up to <span>20% off</span></h1>
                 <p>Limited time only</p>
-                <a href="menu.php" class="btn">shop now</a>
+                <a href="Menu_view.php" class="btn">shop now</a>
             </div>
         </div>
     </div>
@@ -368,7 +368,7 @@
             <h1>Experience the best of<br> irresistable flavors</h1>
             <p>We offer unique flavors of ice cream, crafted with care and love to bring you the perfect cone of ice
                 cream.</p>
-            <a href="menu.php" class="btn">shop now</a>
+            <a href="Menu_view.php" class="btn">shop now</a>
         </div>
     </div>
 

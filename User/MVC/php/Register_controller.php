@@ -43,23 +43,21 @@ if (isset($_POST['submit'])) {
         $warning_msg[] = 'Email already exists';
     } else {
 
-        if ($pass !== $cpass) {
-            $warning_msg[] = 'Confirm password does not match!';
+
+        $hashed_pass = sha1($pass);
+
+        // insert new seller
+        $insert_user = $conn->prepare("INSERT INTO `users` (user_id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
+        $insert_user->bind_param("sssss", $id, $name, $email, $hashed_pass, $rename);
+
+        if ($insert_user->execute()) {
+            move_uploaded_file($image_tmp_name, $image_folder);
+            $success_msg[] = 'Registered successfully!';
         } else {
-            $hashed_pass = sha1($pass);
-
-            // insert new seller
-            $insert_user = $conn->prepare("INSERT INTO `users` (user_id, name, email, password, image) VALUES (?, ?, ?, ?, ?)");
-            $insert_user->bind_param("sssss", $id, $name, $email, $hashed_pass, $rename);
-
-            if ($insert_user->execute()) {
-                move_uploaded_file($image_tmp_name, $image_folder);
-                $success_msg[] = 'Registered successfully!';
-            } else {
-                $error_msg[] = 'Registration failed';
-            }
+            $error_msg[] = 'Registration failed';
         }
+
     }
 
-} // end of submit
+}
 ?>

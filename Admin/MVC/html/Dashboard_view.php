@@ -59,7 +59,7 @@
                     <h3>
                         <?= $number_of_products; ?>
                     </h3>
-                    <p>products added</p>
+                    <p>Add new product</p>
                     <a href="Add_products_view.php" class="btn">add products</a>
                 </div>
 
@@ -134,7 +134,7 @@
                     <h3>
                         <?= $number_of_orders; ?>
                     </h3>
-                    <p>orders placed</p>
+                    <p>Total orders</p>
                     <a href="Admin_order_view.php" class="btn">total orders</a>
                 </div>
 
@@ -150,7 +150,7 @@
                     <h3>
                         <?= $number_of_confirm_orders; ?>
                     </h3>
-                    <p>confirm placed</p>
+                    <p>Pending orders</p>
                     <a href="Admin_order_view.php" class="btn">confirmed orders</a>
                 </div>
 

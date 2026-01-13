@@ -58,7 +58,7 @@
                             echo 'disabled';
                         } ?>">
                             <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-                            <img src="../uploaded_files/<?= $fetch_product['image']; ?>" class="image">
+                           <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" class="image">
                             <?php if ($fetch_product['stock'] > 9) { ?>
                                 <span class="stock in">In Stock</span>
                             <?php } elseif ($fetch_product['stock'] > 0) { ?>

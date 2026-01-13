@@ -15,8 +15,14 @@ if (isset($_POST['update_order'])) {
     $order_id = filter_var($order_id, FILTER_SANITIZE_STRING);
     $update_payment = $_POST['update_payment'];
 
-    $update_pay = $conn->prepare("UPDATE `orders` SET payment_status = ? WHERE id = ?");
-    $update_pay->bind_param("ss", $update_payment, $order_id);
+    $status = 'in progress';
+    if ($update_payment == 'order delivered') {
+        $status = 'delivered';
+    }
+
+    $update_pay = $conn->prepare("UPDATE `orders` SET payment_status = ?, status = ? WHERE id = ?");
+    $update_pay->bind_param("sss", $update_payment, $status, $order_id);
+    
     $update_pay->execute();
     $success_msg[] = 'Order payment status updated';
 }

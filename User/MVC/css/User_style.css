@@ -835,7 +835,7 @@ input[type='submit']:hover {
 
 .taste .heading span {
     font-size: 1rem;
-    color: #666;
+    color: #111;
     text-transform: uppercase;
 }
 
@@ -887,12 +887,12 @@ input[type='submit']:hover {
 .taste .box-container .box .detail h1 {
     font-size: 1.8rem;
     margin-bottom: .5rem;
-    color: #333;
+    color: #111;
 }
 
 .taste .box-container .box .detail p {
     font-size: 0.9rem;
-    color: #222;
+    color: #111;
     line-height: 1.6;
 }
 
@@ -940,9 +940,7 @@ input[type='submit']:hover {
     font-size: 3rem;
 }
 
-.ice-container .detail p {
-    font-size: 1.5rem;
-}
+
 
 .ice-container .detail p {
     font-size: 1.5rem;
@@ -951,7 +949,7 @@ input[type='submit']:hover {
 }
 
 .ice-container .detail .btn {
-    background-color: #000;
+    background-color: #fff;
 }
 
 .taste2 {
@@ -989,7 +987,7 @@ input[type='submit']:hover {
 }
 
 .taste2 .t-banner .detail p {
-    color: #666;
+    color: #111;
     margin-bottom: 2rem;
     font-size: 20px;
 }
@@ -1058,7 +1056,7 @@ input[type='submit']:hover {
 }
 
 .taste2 .box-container .box .box-details p {
-    color: #666;
+    color: #111;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
@@ -1149,7 +1147,7 @@ input[type='submit']:hover {
 
 .usage .row .box-container .box p {
     font-size: 1.1rem;
-    color: #666;
+    color: #111;
     padding: 1rem 0;
 }
 
@@ -1176,10 +1174,15 @@ input[type='submit']:hover {
 }
 
 .pride .detail p {
-    color: #666;
+    color: #111;
     font-size: 20px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.newsletter p {
+    font-size: 1.1rem;
+    color: black;
 }
 
 
@@ -1257,10 +1260,7 @@ input[type='submit']:hover {
     color: var(--main-color);
 }
 
-.newsletter p {
-    font-size: 1.1rem;
-    color: gray;
-}
+
 
 footer {
     background-image: url(../image/footer-bg.jpg);
@@ -1365,7 +1365,7 @@ footer .bottom a {
 
 .journey .box p {
     font-size: 1.3rem;
-    color: #666;
+    color: #111;
     margin-bottom: 2rem;
 }
 
@@ -1412,7 +1412,7 @@ footer .bottom a {
 }
 
 .container .box p {
-    color: #666;
+    color: #111;
     font-size: 16px;
     margin-bottom: 2rem;
 }
@@ -1482,7 +1482,7 @@ footer .bottom a {
 
 .standers p {
     font-size: 1.6rem;
-    color: #666;
+    color: #111;
     padding-bottom: 0.5rem;
 }
 
@@ -1603,7 +1603,7 @@ footer .bottom a {
 }
 
 .offer .box-container .box .detail .p {
-    color: #666;
+    color: #111;
     line-height: 1.5;
 }
 
@@ -1703,7 +1703,7 @@ footer .bottom a {
     padding-top: .5rem;
     font-size: 1.1rem;
     text-transform: uppercase;
-    color: gray;
+    color: black;
 }
 
 .checkout .row form span {
@@ -1945,12 +1945,12 @@ footer .bottom a {
     .order-detail .box-container .box .col .user {
         padding: 0.5rem 0;
         font-size: 1.3rem;
-        color: gray;
+        color: black;
     }
 
     .order-detail .box-container .box .col i {
         margin-right: 1rem;
-        color: gray;
+        color: black;
     }
 
     .order-detail .box-container .box .col .grand-total {
@@ -2002,7 +2002,7 @@ footer .bottom a {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
-    color: #333;
+    color: #111;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.4rem;
@@ -2018,7 +2018,7 @@ footer .bottom a {
 
 .search-results .no-results {
     padding: 10px;
-    color: #666;
+    color: #111;
     text-align: center;
     font-size: 1.4rem;
 }
@@ -2059,7 +2059,7 @@ footer .bottom a {
 
 .profile .details .user p {
     font-size: 1.7rem;
-    color: gray;
+    color: black;
     margin-bottom: 2rem;
 }
 
@@ -2100,7 +2100,7 @@ footer .bottom a {
 
 .profile .details .box-container .box .flex span {
     font-size: 1.5rem;
-    color: lightgray;
+    color: lightblack;
 }
 
 .products {
@@ -2317,7 +2317,7 @@ footer .bottom a {
 }
 
 .view_page .box .profile-detail {
-    color: lightgray;
+    color: lightblack;
     margin: 1rem 0;
     line-height: 2;
 }
@@ -2342,6 +2342,8 @@ footer .bottom a {
     position: relative;
     min-height: 100vh;
 }
+
+
 
 .service .box-container .box {
     line-height: 1.5;
@@ -2473,4 +2475,199 @@ footer .bottom a {
     .usage .row {
         flex-flow: column;
     }
+}
+
+/* Order */
+
+.orders,
+.order-detail {
+    padding: 4%;
+
+}
+
+.orders .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.orders .box-container .box {
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.orders .box-container .box a .image {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.orders .box-container .box a .content {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-alpha-25);
+    backdrop-filter: var(--backdrop-filter);
+    transition: .5s;
+    font-size: 1rem;
+}
+
+.orders .box-container .box a:hover .content {
+    top: 0;
+}
+
+.orders .box-container .box a .content .shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.orders .box-container .box a .content .row {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.orders .box-container .box a .date {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #fff;
+    font-size: 1rem;
+    background-color: var(--main-color);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.orders .box-container .box .name {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-transform: capitalize;
+}
+
+.orders .box-container .box .price {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.orders .box-container .box .status {
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.order-detail .box-container {
+    padding: 2rem;
+}
+
+.order-detail .box-container .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.order-detail .box-container .box .col {
+    flex: 1 1 30rem;
+}
+
+.order-detail .box-container .box .col .image {
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+    margin: 1rem 0;
+}
+
+.order-detail .box-container .box .col .title {
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    color: var(--main-color);
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    display: inline-block;
+    text-transform: capitalize;
+
+}
+
+.order-detail .box-container .box .col .title i {
+    margin-right: 1rem;
+    color: #000;
+}
+
+.order-detail .box-container .box .col .price {
+    color: var(--main-color);
+    font-size: 1rem;
+    padding: .5rem 0;
+    margin-top: -1rem;
+}
+
+.order-detail .box-container .box .col .name {
+    font-size: 1.5rem;
+    color: #000;
+    text-transform: capitalize;
+    overflow-x: hidden;
+}
+
+.order-detail .box-container .box .col .user {
+    padding: .5rem 0;
+    font-size: 1.2rem;
+    color: #000;
+
+}
+
+.order-detail .box-container .box .col .user i {
+    margin-right: 1rem;
+    color: var(--main-color);
+}
+
+.order-detail .box-container .box .col .grand-total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    text-transform: capitalize;
+
+}
+
+.order-detail .box-container .box .col .grand-total span {
+    margin-left: .5rem;
+    font-weight: 700;
+    padding: .3rem .5rem;
+    background-color: var(--white-alpha-40);
+    border-radius: .5rem;
+    color: #000;
+}
+
+.order-detail .box-container .box .col .btn {
+    width: 100%;
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.order-detail .box-container .box .col .status {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: .5rem 0;
+}
+
+.order-detail .box-container .box .col p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: .5rem 0;
 }

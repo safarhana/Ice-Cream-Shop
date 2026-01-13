@@ -122,7 +122,7 @@
 
                             ?>
                             <div class="flex">
-                                <img src="../uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
+                                 <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
                                 <div>
                                     <h3 class="name"><?= $fetch_get['name']; ?></h3>
                                     <p class="price"><?= $fetch_get['price']; ?></p>
@@ -149,7 +149,8 @@
                                 ?>
 
                                 <div class="flex">
-                                    <img src="../uploaded_files/<?= $fetch_product['image']; ?>" alt="" class="image">
+                                   <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" alt=""
+                                        class="image">
                                     <div>
                                         <h3 class="name"><?= $fetch_product['name']; ?></h3>
                                         <p class="price"><?= $fetch_product['price']; ?> X <?= $fetch_cart['qty']; ?></p>

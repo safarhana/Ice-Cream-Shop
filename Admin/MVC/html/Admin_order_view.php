@@ -34,7 +34,7 @@
                         ?>
                         <div class="box">
                             <div class="status"
-                                style="color: <?php echo ($fetch_order['status'] == 'in progress') ? 'limegreen' : 'red'; ?>;">
+                                style="color: <?php echo ($fetch_order['status'] == 'in progress' || $fetch_order['status'] == 'delivered') ? 'limegreen' : 'red'; ?>;">
                                 <?= $fetch_order['status']; ?>
                             </div>
 

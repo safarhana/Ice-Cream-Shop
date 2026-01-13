@@ -30,15 +30,15 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.suggestion-item', function (e) {
-    e.preventDefault(); // Prevent default anchor behavior
+    e.preventDefault();
     var name = $(this).data('name');
     $('#search_box').val(name);
     $('#search-results').fadeOut();
-    // Submit the form
+
     $('.search-form').submit();
   });
 
-  // Hide suggestions when clicking outside
+
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.search-form').length) {
       $('#search-results').fadeOut();

@@ -69,6 +69,6 @@
     </div>
     <div class="bottom">
         <p>Copyright 2024 coding with whatever. All rights reserved</p>
-        <a href="admin panel/login.php">become a seller</a>
+        <a href="../../../User/MVC/html/Home_view.php">Return as customer</a>
     </div>
 </footer>

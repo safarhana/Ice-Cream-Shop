@@ -10,10 +10,86 @@
             <a href="Orders_view.php">Order</a>
             <a href="Contact_view.php">Contact</a>
         </nav>
-        <form action="Search_product_view.php" method="post" class="search-form">
-            <input type="text" name="search_product" placeholder="Search product..." required maxlength="100">
+        <form action="Search_product_view.php" method="post" class="search-form" style="position: relative;">
+            <input type="text" name="search_product" id="search_box" placeholder="Search product..." required maxlength="100" autocomplete="off">
             <button type="submit" class="bx bx-search-alt-2" id="search_product_btn"></button>
+            <div id="search-results" class="search-results"></div>
         </form>
+        <style>
+            .search-results {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                border-radius: 0 0 5px 5px;
+                z-index: 1000;
+                display: none;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+            .search-results .suggestion-item {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                color: #333;
+                text-decoration: none;
+                cursor: pointer;
+                font-size: 1.4rem;
+            }
+            .search-results .suggestion-item:last-child {
+                border-bottom: none;
+            }
+            .search-results .suggestion-item:hover {
+                background-color: #f9f9f9;
+            }
+            .search-results .no-results {
+                padding: 10px;
+                color: #666;
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#search_box').keyup(function(){
+                    var query = $(this).val();
+                    if(query != ''){
+                        $.ajax({
+                            url: '../php/Search_suggestions.php',
+                            method: 'POST',
+                            data: {query:query},
+                            success:function(data){
+                                $('#search-results').fadeIn();
+                                $('#search-results').html(data);
+                            }
+                        });
+                    } else {
+                        $('#search-results').fadeOut();
+                        $('#search-results').html('');
+                    }
+                });
+
+                $(document).on('click', '.suggestion-item', function(e){
+                    e.preventDefault(); // Prevent default anchor behavior
+                    var name = $(this).data('name');
+                    $('#search_box').val(name);
+                    $('#search-results').fadeOut();
+                    // Submit the form
+                    $('.search-form').submit(); 
+                });
+
+                // Hide suggestions when clicking outside
+                $(document).on('click', function(e) {
+                    if (!$(e.target).closest('.search-form').length) {
+                        $('#search-results').fadeOut();
+                    }
+                });
+            });
+        </script>
         <div class="icons">
             <div class="bx bx-list-plus" id="menu-btn"></div>
             <div class="bx bx-search-alt-2" id="search-btn"></div>

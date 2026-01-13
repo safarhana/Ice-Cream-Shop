@@ -35,27 +35,27 @@
 
         <div class="box-container">
             <?php
-            // Check if search was submitted
+
             if (isset($_POST['search_product']) || isset($_POST['search_product_btn'])) {
 
-                // Sanitize input and prepare MySQLi variables
+
                 $search_products = $_POST['search_product'];
                 $search_query = "%" . $search_products . "%";
                 $status = 'active';
 
-                // 1. Prepare MySQLi Statement
+
                 $select_products = $conn->prepare("SELECT * FROM `products` WHERE name LIKE ? AND status = ?");
 
-                // 2. Bind parameters (s = string)
+
                 $select_products->bind_param("ss", $search_query, $status);
 
-                // 3. Execute
+
                 $select_products->execute();
 
-                // 4. Get the result set
+
                 $result = $select_products->get_result();
 
-                // 5. Use num_rows (MySQLi) instead of rowCount (PDO)
+
                 if ($result->num_rows > 0) {
                     while ($fetch_products = $result->fetch_assoc()) {
                         ?>
@@ -85,7 +85,7 @@
                                 <p class="price">Price: $<?= $fetch_products['price']; ?></p>
                                 <input type="hidden" name="product_id" value="<?= $fetch_products['id']; ?>">
                                 <div class="flex-btn">
-                                    <a href="checkout.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>
+                                    <a href="checkout_view.php?get_id=<?= $fetch_products['id']; ?>" class="btn">Buy Now</a>
                                     <input type="number" name="qty" required min="1" max="99" value="1" class="qty">
                                 </div>
                             </div>

@@ -47,7 +47,7 @@
         while ($fetch_orders = $result_orders->fetch_assoc()) {
           $product_id = $fetch_orders['product_id'];
           $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
-          $select_products->bind_param("i", $product_id);
+          $select_products->bind_param("s", $product_id);
           $select_products->execute();
           $result_products = $select_products->get_result();
 

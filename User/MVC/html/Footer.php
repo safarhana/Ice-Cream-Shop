@@ -2,7 +2,7 @@
     <div class="content">
         <span>get latest ice cream delights updates</span>
         <h1>subscribe to our newsletter</h1>
-        <p>stay updated with our latest flavors, exclusive offers and exciting <br> events delivered straight to your
+        <p styl>stay updated with our latest flavors, exclusive offers and exciting <br> events delivered straight to your
             inbox. join us today!</p>
         <div class="input-field">
             <input type="email" name="" placeholder="Enter your email">

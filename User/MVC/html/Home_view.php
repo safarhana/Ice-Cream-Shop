@@ -113,22 +113,11 @@
                 </div>
                 <div class="detail">
                     <h4>gift service</h4>
-                    <span>support gift service</span>
+                    <span>With care</span>
                 </div>
             </div>
 
-            <div class="box">
-                <div class="icon">
-                    <div class="icon-box">
-                        <img src="../image/services.png" class="img1">
-                        <img src="../image/services (1).png" class="img2">
-                    </div>
-                </div>
-                <div class="detail">
-                    <h4>return</h4>
-                    <span>7 days free return</span>
-                </div>
-            </div>
+            
 
             <div class="box">
                 <div class="icon">
@@ -147,7 +136,7 @@
 
     <div class="categories">
         <div class="heading">
-            <h1>Explore Our Categories</h1>
+            <h1>Explore Our Menu</h1>
             <img src="../image/separator-img.png">
         </div>
         <div class="box-container">
@@ -179,9 +168,9 @@
     <img src="../image/menu-banner.jpg" class="menu-banner">
     <div class="taste">
         <div class="heading">
-            <span>Taste</span>
+            <h1>Natural Ingredients</h1>
             <img src="../image/separator-img.png" alt="separator-img">
-            <h1>Our Natural Ingredients</h1>
+            
         </div>
         <div class="box-container">
             <div class="box vanilla">

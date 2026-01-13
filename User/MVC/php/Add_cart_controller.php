@@ -7,12 +7,12 @@ if (isset($_POST['add_to_cart'])) {
         $qty = filter_var($qty, FILTER_SANITIZE_STRING);
 
         $verify_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-        $verify_cart->bind_param("ii", $user_id, $product_id);
+        $verify_cart->bind_param("ss", $user_id, $product_id);
         $verify_cart->execute();
         $result_cart = $verify_cart->get_result();
 
-        $max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
-        $max_cart_items->bind_param("ii", $user_id, $product_id);
+        $max_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+        $max_cart_items->bind_param("s", $user_id);
         $max_cart_items->execute();
         $result_max_cart_items = $max_cart_items->get_result();
 

@@ -1,5 +1,4 @@
 <?php include '../php/View_order_controller.php'; ?>
-<?php include '../php/Orders_controller.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +63,7 @@
                   <p class="title">
                     <i class="bx bxs-calender-alt"></i><?= $fetch_order['date']; ?>
                   </p>
-                  <img src="uploaded_files/<?= $fetch_product['image']; ?>" class="image" alt="<?= $fetch_product
+                  <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" class="image" alt="<?= $fetch_product
                     ['name']; ?>">
                   <p class="price">$<?= $fetch_product['price']; ?>/-</p>
                   <h3 class="name"><?= $fetch_product['name']; ?></h3>
@@ -98,18 +97,18 @@
 
                   <?php if ($fetch_order['status'] == 'canceled') { ?>
                     <p>Website: Cancelled Order</p>
-                    <a href="Checkout.php?get_id=<?= $fetch_product['id']; ?>" class="btn" style="line-height:
+                    <a href="Checkout_view.php?get_id=<?= $fetch_product['id']; ?>" class="btn" style="line-height:
                   3;">Order Again</a>
                   <?php } else { ?>
                     <form action="" method="post">
-                      <button type="submit" class="btn" name="cancel" onclick="return confirm('Don't you want
-                    to cancel this order?');">Cancel
+                      <button type="submit" class="btn" name="cancel"
+                            onclick="return confirm('Don’t you want to cancel this order?');">Cancel
                       </button>
                     </form>
                   <?php } ?>
                 </div>
               </div>
-            <?php
+              <?php
 
             }
 

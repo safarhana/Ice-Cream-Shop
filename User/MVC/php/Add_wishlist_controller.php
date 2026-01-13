@@ -6,12 +6,12 @@ if (isset($_POST['add_to_wishlist'])) {
 
 
         $verify_wishlist = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-        $verify_wishlist->bind_param("ii", $user_id, $product_id);
+        $verify_wishlist->bind_param("ss", $user_id, $product_id);
         $verify_wishlist->execute();
         $result_wishlist = $verify_wishlist->get_result();
 
-        $cart_num = $conn->prepare("SELECT * FROM `wishlist` WHERE user_id = ? AND product_id = ?");
-        $cart_num->bind_param("ii", $user_id, $product_id);
+        $cart_num = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ? AND product_id = ?");
+        $cart_num->bind_param("ss", $user_id, $product_id);
         $cart_num->execute();
         $result_cart_num = $cart_num->get_result();
 

@@ -34,7 +34,8 @@
                     while ($fetch_product = $result_product->fetch_assoc()) {
                         ?>
                         <div class="form-container">
-                            <form action="" method="post" enctype="multipart/form-data" class="register">
+                            <form action="" onsubmit="return handleEditProduct()" method="post" enctype="multipart/form-data"
+                                class="register">
 
                                 <input type="hidden" name="old_image" value="<?= $fetch_product['image']; ?>">
                                 <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
@@ -123,6 +124,7 @@
         </section>
     </div>
 
+    <script src="../js/Edit_product_validation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="../js/Admin_script.js"></script>
     <?php include 'Alert.php'; ?>

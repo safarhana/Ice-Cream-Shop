@@ -36,7 +36,8 @@
             <img src="../image/separator-img.png">
         </div>
 
-        <form action="" method="post" enctype="multipart/form-data" class="register">
+        <form action="" onsubmit="return handleUpdateUser()" method="post" enctype="multipart/form-data"
+            class="register">
             <div class="img-box">
                 <img src="../uploaded_files/<?= $fetch_profile['image']; ?>">
             </div>
@@ -77,6 +78,7 @@
 
 
     <script src="../js/User_script.js"></script>
+    <script src="../js/Update_user_validation.js"></script>
     <?php include '../html/Footer.php'; ?>
 
     <!-- custom js link -->

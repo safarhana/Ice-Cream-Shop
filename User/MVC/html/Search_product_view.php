@@ -79,7 +79,7 @@
                                     <div>
                                         <button type="submit" name="add_to_cart"><i class="bx bx-cart"></i></button>
                                         <button type="submit" name="add_to_wishlist"><i class="bx bx-heart"></i></button>
-                                        <a href="View_page_view.php?pid=<?= $fetch_products['id']; ?>" class="bx bxs-show"></a>
+                                        <a href="Product_detail_view.php?pid=<?= $fetch_products['id']; ?>" class="bx bxs-show"></a>
                                     </div>
                                 </div>
                                 <p class="price">Price: $<?= $fetch_products['price']; ?></p>

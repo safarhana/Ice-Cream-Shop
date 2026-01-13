@@ -12,16 +12,16 @@ if (isset($_POST['query'])) {
         $select_products->execute();
         $result = $select_products->get_result();
 
+        $suggestions = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo '<a href="#" class="suggestion-item" data-name="' . htmlspecialchars($row['name']) . '">
-                        <img src="../../../Admin/MVC/uploaded_files/' . htmlspecialchars($row['image']) . '" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px;">
-                        <span>' . htmlspecialchars($row['name']) . '</span>
-                      </a>';
+                $suggestions[] = array(
+                    'name' => htmlspecialchars($row['name']),
+                    'image' => htmlspecialchars($row['image'])
+                );
             }
-        } else {
-            echo '<p class="no-results">No products found</p>';
         }
+        echo json_encode($suggestions);
     }
 }
 ?>

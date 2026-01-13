@@ -23,20 +23,17 @@ if (isset($_POST['send_message'])) {
 
         if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
 
-            $verify_message = $conn->prepare(
-                "SELECT * FROM `message`
-                 WHERE user_id = ? AND name = ? AND email = ? AND subject = ? AND message = ?"
-            );
-            $verify_message->execute([$user_id, $name, $email, $subject, $message]);
+            $verify_message = $conn->prepare("SELECT * FROM `message` WHERE user_id = ? AND name = ? AND email = ? AND subject = ? AND message = ?");
+            $verify_message->bind_param("sssss", $user_id, $name, $email, $subject, $message);
+            $verify_message->execute();
+            $verify_message->store_result();
 
-            if ($verify_message->rowCount() > 0) {
+            if ($verify_message->num_rows > 0) {
                 $warning_msg[] = 'Message already exists!';
             } else {
-                $insert_message = $conn->prepare(
-                    "INSERT INTO `message` (id, user_id, name, email, subject, message)
-                     VALUES (?,?,?,?,?,?)"
-                );
-                $insert_message->execute([$id, $user_id, $name, $email, $subject, $message]);
+                $insert_message = $conn->prepare("INSERT INTO `message` (id, user_id, name, email, subject, message) VALUES (?,?,?,?,?,?)");
+                $insert_message->bind_param("ssssss", $id, $user_id, $name, $email, $subject, $message);
+                $insert_message->execute();
                 $success_msg[] = 'Message sent successfully!';
             }
 

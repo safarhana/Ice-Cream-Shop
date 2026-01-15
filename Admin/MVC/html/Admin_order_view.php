@@ -48,11 +48,43 @@
                         $count_result = $count_items->get_result()->fetch_assoc();
                         $total_items = $count_result['total_items'];
                         $total_price = $count_result['total_price'];
+
+                        // Calculate aggregated status
+                        $status_query = $conn->prepare("SELECT status FROM `orders` WHERE id = ?");
+                        $status_query->bind_param("s", $order_id);
+                        $status_query->execute();
+                        $status_result_set = $status_query->get_result();
+
+                        $has_in_progress = false;
+                        $has_delivered = false;
+                        $all_canceled = true;
+
+                        while ($s_row = $status_result_set->fetch_assoc()) {
+                            if ($s_row['status'] != 'canceled') {
+                                $all_canceled = false;
+                            }
+                            if ($s_row['status'] == 'in progress') {
+                                $has_in_progress = true;
+                            }
+                            if ($s_row['status'] == 'delivered') {
+                                $has_delivered = true;
+                            }
+                        }
+
+                        if ($all_canceled) {
+                            $order_status = 'canceled';
+                            $status_color = 'red';
+                        } elseif (!$has_in_progress && $has_delivered) {
+                            $order_status = 'delivered';
+                            $status_color = 'limegreen';
+                        } else {
+                            $order_status = 'in progress';
+                            $status_color = 'limegreen';
+                        }
                         ?>
                         <div class="box">
-                            <div class="status"
-                                style="color: <?php echo ($fetch_order['status'] == 'in progress' || $fetch_order['status'] == 'delivered') ? 'limegreen' : 'red'; ?>;">
-                                <?= $fetch_order['status']; ?>
+                            <div class="status" style="color: <?= $status_color; ?>;">
+                                <?= $order_status; ?>
                             </div>
 
                             <div class="details">

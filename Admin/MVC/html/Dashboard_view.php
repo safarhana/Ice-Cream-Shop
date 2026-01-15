@@ -44,7 +44,7 @@
                     <h3>
                         <?= $number_of_msg; ?>
                     </h3>
-                    <p>unread messages</p>
+                    <p>Messages</p>
                     <a href="Admin_message_view.php" class="btn">see message</a>
                 </div>
 

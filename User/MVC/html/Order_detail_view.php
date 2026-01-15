@@ -101,7 +101,7 @@
         </div>
     </div>
 
-    <!-- Add explicit Cancel All Button if not canceled -->
+
     <div style="text-align:center; margin-bottom: 2rem;">
         <?php
         $check_status = $conn->prepare("SELECT status FROM `orders` WHERE id = ? LIMIT 1");

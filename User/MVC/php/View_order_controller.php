@@ -1,11 +1,13 @@
 <?php
 include '../db/Connect.php';
 
-if (isset($_COOKIE['user_id'])) {
-    $user_id = $_COOKIE['user_id'];
-} else {
-    $user_id = '';
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: Login_view.php');
+    exit();
 }
+
+$user_id = $_SESSION['user_id'];
 if (isset($_GET['get_id'])) {
     $get_id = $_GET['get_id'];
 } else {
@@ -13,7 +15,7 @@ if (isset($_GET['get_id'])) {
     header('location:Orders_view.php');
 }
 
-if(isset($_POST['cancel'])) {
+if (isset($_POST['cancel'])) {
     $status = 'canceled';
     $update_order = $conn->prepare("UPDATE `orders` SET status = ? WHERE id = ?");
     $update_order->bind_param("si", $status, $get_id);

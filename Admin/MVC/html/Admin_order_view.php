@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    <?php include 'Admin_header.php'; ?>
     <div class="main-container">
 
 
@@ -24,60 +24,87 @@
 
             <div class="box-container">
                 <?php
-                $select_order = $conn->prepare("SELECT * FROM `orders` WHERE seller_id = ?");
+                // Select unique order IDs for this seller
+                $select_order = $conn->prepare("SELECT DISTINCT id FROM `orders` WHERE seller_id = ? ORDER BY date DESC");
                 $select_order->bind_param("s", $seller_id);
                 $select_order->execute();
                 $result_order = $select_order->get_result();
 
                 if ($result_order->num_rows > 0) {
-                    while ($fetch_order = $result_order->fetch_assoc()) {
+                    while ($fetch_order_id = $result_order->fetch_assoc()) {
+
+                        $order_id = $fetch_order_id['id'];
+
+                        // Fetch one row to get general order details (User info, Date, etc.)
+                        $order_details_query = $conn->prepare("SELECT * FROM `orders` WHERE id = ? LIMIT 1");
+                        $order_details_query->bind_param("s", $order_id);
+                        $order_details_query->execute();
+                        $fetch_order = $order_details_query->get_result()->fetch_assoc();
+
+                        // Calculate totals for this order
+                        $count_items = $conn->prepare("SELECT COUNT(*) as total_items, SUM(qty*price) as total_price FROM `orders` WHERE id = ?");
+                        $count_items->bind_param("s", $order_id);
+                        $count_items->execute();
+                        $count_result = $count_items->get_result()->fetch_assoc();
+                        $total_items = $count_result['total_items'];
+                        $total_price = $count_result['total_price'];
+
+                        // Calculate aggregated status
+                        $status_query = $conn->prepare("SELECT status FROM `orders` WHERE id = ?");
+                        $status_query->bind_param("s", $order_id);
+                        $status_query->execute();
+                        $status_result_set = $status_query->get_result();
+
+                        $has_in_progress = false;
+                        $has_delivered = false;
+                        $all_canceled = true;
+
+                        while ($s_row = $status_result_set->fetch_assoc()) {
+                            if ($s_row['status'] != 'canceled') {
+                                $all_canceled = false;
+                            }
+                            if ($s_row['status'] == 'in progress') {
+                                $has_in_progress = true;
+                            }
+                            if ($s_row['status'] == 'delivered') {
+                                $has_delivered = true;
+                            }
+                        }
+
+                        if ($all_canceled) {
+                            $order_status = 'canceled';
+                            $status_color = 'red';
+                        } elseif (!$has_in_progress && $has_delivered) {
+                            $order_status = 'delivered';
+                            $status_color = 'limegreen';
+                        } else {
+                            $order_status = 'in progress';
+                            $status_color = 'limegreen';
+                        }
                         ?>
                         <div class="box">
-                            <div class="status"
-                                style="color: <?php echo ($fetch_order['status'] == 'in progress' || $fetch_order['status'] == 'delivered') ? 'limegreen' : 'red'; ?>;">
-                                <?= $fetch_order['status']; ?>
+                            <div class="status" style="color: <?= $status_color; ?>;">
+                                <?= $order_status; ?>
                             </div>
 
                             <div class="details">
-                                <p>User Name: <span>
-                                        <?= $fetch_order['name']; ?>
-                                    </span></p>
-                                <p>User Id: <span>
-                                        <?= $fetch_order['user_id']; ?>
-                                    </span></p>
-                                <p>Placed On: <span>
-                                        <?= $fetch_order['date']; ?>
-                                    </span></p>
-                                <p>User Number: <span>
-                                        <?= $fetch_order['number']; ?>
-                                    </span></p>
-                                <p>User Email: <span>
-                                        <?= $fetch_order['email']; ?>
-                                    </span></p>
-                                <p>Total Price: <span>
-                                        <?= $fetch_order['price']; ?>
-                                    </span></p>
-                                <p>Payment Method: <span>
-                                        <?= $fetch_order['method']; ?>
-                                    </span></p>
-                                <p>User Address: <span>
-                                        <?= $fetch_order['address']; ?>
-                                    </span></p>
+                                <p>User Name: <span><?= $fetch_order['name']; ?></span></p>
+                                <p>User Id: <span><?= $fetch_order['user_id']; ?></span></p>
+                                <p>Placed On: <span><?= $fetch_order['date']; ?></span></p>
+                                <p>User Number: <span><?= $fetch_order['number']; ?></span></p>
+                                <p>Total Price: <span><?= $total_price; ?>/-</span></p>
+                                <p>Total Items: <span><?= $total_items; ?></span></p>
 
                                 <form action="" method="post">
                                     <input type="hidden" name="order_id" value="<?= $fetch_order['id']; ?>">
-                                    <select name="update_payment" class="box"
-                                        style="width: 100%; margin: 1rem 0; border: 1px solid #ccc;">
-                                        <option disabled selected>
-                                            <?= $fetch_order['payment_status']; ?>
-                                        </option>
-                                        <option value="pending">pending</option>
-                                        <option value="order delivered">Order Delivered</option>
-                                    </select>
                                     <div class="flex-btn">
-                                        <input type="submit" name="update_order" value="Update Payment" class="btn">
-                                        <input type="submit" name="delete_order" value="Delete Order" class="btn"
-                                            onclick="return confirm('Delete this order?');">
+                                        <a href="Admin_order_detail_view.php?get_id=<?= $fetch_order['id']; ?>" class="btn"
+                                            style="width:100%; text-align:center;">View Details</a>
+                                    </div>
+                                    <div class="flex-btn" style="margin-top: 1rem;">
+                                        <button type="submit" name="delete_order" class="btn"
+                                            onclick="return confirm('Delete this entire order?');" style="width:100%;">Delete
+                                            Order</button>
                                     </div>
                                 </form>
                             </div>

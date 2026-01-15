@@ -38,14 +38,29 @@
     </div>
     <div class="box-container">
       <?php
-      $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE user_id = ? ORDER BY date DESC");
+      $select_orders = $conn->prepare("SELECT DISTINCT id, date, status FROM `orders` WHERE user_id = ? ORDER BY date DESC");
       $select_orders->bind_param("i", $user_id);
       $select_orders->execute();
       $result_orders = $select_orders->get_result();
 
       if ($result_orders->num_rows > 0) {
         while ($fetch_orders = $result_orders->fetch_assoc()) {
-          $product_id = $fetch_orders['product_id'];
+          $order_id = $fetch_orders['id'];
+          // Get order details (using one item for image)
+          $order_query = $conn->prepare("SELECT product_id FROM `orders` WHERE id = ? LIMIT 1");
+          $order_query->bind_param("s", $order_id);
+          $order_query->execute();
+          $fetch_order_details = $order_query->get_result()->fetch_assoc();
+          $product_id = $fetch_order_details['product_id'];
+
+          // Count items in this order
+          $count_items = $conn->prepare("SELECT COUNT(*) as total_items, SUM(qty*price) as total_price FROM `orders` WHERE id = ?");
+          $count_items->bind_param("s", $order_id);
+          $count_items->execute();
+          $count_result = $count_items->get_result()->fetch_assoc();
+          $total_items = $count_result['total_items'];
+          $total_price = $count_result['total_price'];
+
           $select_products = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
           $select_products->bind_param("s", $product_id);
           $select_products->execute();
@@ -55,10 +70,9 @@
             while ($fetch_products = $result_products->fetch_assoc()) {
               ?>
               <div class="box" <?php if ($fetch_orders['status'] == 'canceled') {
-                echo 'style="border: 2px solid red;"
-          ';
+                echo 'style="border: 2px solid red;"';
               } ?>>
-                <a href="View_order.php?get_id=<?= $fetch_orders['id']; ?>">
+                <a href="Order_detail_view.php?get_id=<?= $fetch_orders['id']; ?>">
                   <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_products['image']; ?>" class="image">
                   <p class="date">
                     <i class="bx bx-calendar-alt"></i> <?= $fetch_orders['date']; ?>
@@ -66,8 +80,8 @@
                   <div class="content">
                     <img src="../../../Admin/MVC/image/shape-19.png" class="shape">
                     <div class="row">
-                      <h3 class="name"><?= $fetch_products['name']; ?></h3>
-                      <p class="price">Price: <?= $fetch_products['price']; ?>/-</p>
+                      <h3 class="name">Order ID: <?= $fetch_orders['id']; ?></h3>
+                      <p class="price">Total: <?= $total_price; ?>/- (<?= $total_items; ?> items)</p>
                       <p class="status" <?php
                       if ($fetch_orders['status'] == 'delivered') {
                         echo 'style="color: orange;"';
@@ -76,8 +90,7 @@
                       } else {
                         echo 'style="color: green;"';
                       }
-                      ?>
-                      >
+                      ?>>
                         <?= $fetch_orders['status']; ?>
                       </p>
                     </div>
@@ -91,7 +104,7 @@
       }
       ?>
     </div>
-        
+
     <?php include '../html/Footer.php'; ?>
 
     <!-- custom js link -->

@@ -31,7 +31,7 @@
     <div class="products">
         <div class="heading">
             <h1>My Cart</h1>
-            <img src="../image/separator.png" alt="">
+            <img src="../image/separator-img.png" alt="">
         </div>
 
         <div class="box-container">
@@ -58,7 +58,7 @@
                             echo 'disabled';
                         } ?>">
                             <input type="hidden" name="cart_id" value="<?= $fetch_cart['id']; ?>">
-                           <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" class="image">
+                            <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" class="image">
                             <?php if ($fetch_product['stock'] > 9) { ?>
                                 <span class="stock in">In Stock</span>
                             <?php } elseif ($fetch_product['stock'] > 0) { ?>

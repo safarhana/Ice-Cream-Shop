@@ -55,13 +55,14 @@ if (isset($_POST['place_order'])) {
             $warning_msg[] = 'Something went wrong';
         }
     } elseif ($result_cart->num_rows > 0) {
+        $id = unique_id();
         while ($fetch_cart = $result_cart->fetch_assoc()) {
             $s_product = $conn->prepare("SELECT * FROM `products` WHERE id = ? LIMIT 1");
             $s_product->bind_param("s", $fetch_cart['product_id']);
             $s_product->execute();
             $f_product = $s_product->get_result()->fetch_assoc();
             $seller_id = $f_product['seller_id'];
-            $id = unique_id();
+
             $qty = $fetch_cart['qty'];
             $insert_order = $conn->prepare("INSERT INTO `orders`(id,user_id, seller_id, name, number, email, method, address, address_type, product_id, price,  qty) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $insert_order->bind_param("ssssssssssss", $id, $user_id, $seller_id, $name, $number, $email, $method, $address, $address_type, $fetch_cart['product_id'], $fetch_cart['price'], $fetch_cart['qty']);

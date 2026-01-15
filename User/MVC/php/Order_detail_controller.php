@@ -1,6 +1,4 @@
 <?php
-include '../db/Connect.php';
-
 session_start();
 include '../db/Connect.php';
 

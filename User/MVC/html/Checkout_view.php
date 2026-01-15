@@ -82,12 +82,12 @@
                     <div class="box">
                         <div class="input-field">
                             <p>address line 01<span>*</span></p>
-                            <input type="text" name="flat" maxlength="50" placeholder="e.g. flat or building name"
-                                required>
+                            <input type="text" name="street" maxlength="50" placeholder="e.g. street name" required>
                         </div>
                         <div class="input-field">
                             <p>address line 02<span>*</span></p>
-                            <input type="text" name="street" maxlength="50" placeholder="e.g. street name" required>
+                            <input type="text" name="flat" maxlength="50" placeholder="e.g. flat or building name"
+                                required>
                         </div>
 
                         <div class="input-field">
@@ -122,7 +122,7 @@
 
                             ?>
                             <div class="flex">
-                                 <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
+                                <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_get['image']; ?>" alt="" class="image">
                                 <div>
                                     <h3 class="name"><?= $fetch_get['name']; ?></h3>
                                     <p class="price"><?= $fetch_get['price']; ?></p>
@@ -149,7 +149,7 @@
                                 ?>
 
                                 <div class="flex">
-                                   <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" alt=""
+                                    <img src="../../../Admin/MVC/uploaded_files/<?= $fetch_product['image']; ?>" alt=""
                                         class="image">
                                     <div>
                                         <h3 class="name"><?= $fetch_product['name']; ?></h3>

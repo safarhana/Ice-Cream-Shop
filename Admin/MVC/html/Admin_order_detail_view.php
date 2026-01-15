@@ -88,6 +88,7 @@
 
                                 <form action="" method="post">
                                     <input type="hidden" name="order_id" value="<?= $fetch_order['id']; ?>">
+                                    <input type="hidden" name="product_id" value="<?= $fetch_order['product_id']; ?>">
                                    
                                     <select name="update_payment" class="box"
                                         style="width: 100%; margin: 1rem 0; border: 1px solid #ccc;">

@@ -65,6 +65,8 @@
         </form>
     </div>
 
+    <?php include 'Footer.php' ?>
+
     <script src="../js/Register_validation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <?php include 'Alert.php'; ?>

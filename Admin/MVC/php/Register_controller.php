@@ -33,8 +33,15 @@ if (isset($_POST['submit'])) {
     $select_seller->execute();
     $select_seller->store_result();
 
+    $select_seller_name = $conn->prepare("SELECT * FROM `sellers` WHERE name = ?");
+    $select_seller_name->bind_param("s", $name);
+    $select_seller_name->execute();
+    $select_seller_name->store_result();
+
     if ($select_seller->num_rows > 0) {
         $warning_msg[] = 'Email already exists';
+    } elseif ($select_seller_name->num_rows > 0) {
+        $warning_msg[] = 'Username already exists';
     } else {
 
         if ($pass !== $cpass) {

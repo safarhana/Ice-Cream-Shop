@@ -53,14 +53,6 @@
                     </div>
                     <a href="Orders_view.php" class="btn">View Products</a>
                 </div>
-                <div class="box">
-                    <div class="flex">
-                        <i class="bx bxs-chat"></i>
-                        <h3><?= $total_message; ?></h3>
-                    </div>
-
-                    <a href="#" class="btn">View Messages</a>
-                </div>
             </div>
 
         </div>

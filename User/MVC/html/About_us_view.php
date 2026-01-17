@@ -46,7 +46,7 @@
                 </p>
                 <div class="flex-btn">
                     <a href="" class="btn">Read More</a>
-                    <a href="menu.php" class="btn">visit our shop</a>
+                    <a href="Menu_view.php" class="btn">visit our shop</a>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
         <p>We strive to foster a welcoming<br> and joyful environment where customers
             of<br> all ages can gather, celebrate, and make lasting memories.<br> Our
             commitment extends beyond serving great ice cream.</p>
-        <a href="menu.php" class="btn">Our Service</a>
+        <a href="Menu_view.php" class="btn">Our Service</a>
     </div>
 
     <div class="container">

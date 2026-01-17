@@ -2671,3 +2671,58 @@ footer .bottom a {
     line-height: 1.5;
     padding: .5rem 0;
 }
+
+.order-detail .box-container .box {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.order-detail .box-container .box .image {
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    border-radius: .5rem;
+    margin-right: 2rem;
+}
+
+.order-detail .box-container .box .content {
+    flex: 1;
+}
+
+.order-detail .box-container .box .content .shape {
+    width: 8rem;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.order-detail .box-container .box .content .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: .5rem;
+}
+
+.order-detail .box-container .box .content .name {
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+
+.order-detail .box-container .box .content .price {
+    font-size: 1.6rem;
+    color: #000;
+}
+
+.order-detail .box-container .box .content .status {
+    font-size: 1.4rem;
+    padding-top: 1rem;
+}
+
+.order-detail .box-container .box .date {
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--light-color);
+}
